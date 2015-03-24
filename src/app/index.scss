@@ -1,0 +1,49 @@
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+
+$footer-height: 50px;
+
+body {
+	padding-top: 50px;
+}
+
+html, body,
+body > .container-fluid {
+	height: 100%;
+}
+
+body > .container-fluid {
+	position: relative;
+	padding-bottom: $footer-height;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px;
+	background-color: $navbar-default-bg;
+	height: $footer-height;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+.sidebar {
+	width: 20%;
+	float:left;
+}
+.content {
+	width: 80%;
+	float:left;
+}
+
+// injector
+// endinjector

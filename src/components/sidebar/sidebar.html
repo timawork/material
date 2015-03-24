@@ -1,0 +1,10 @@
+<div data-ng-controller="sidebarCtrl as sidebar">
+    <ul class="side-nav">
+        <li data-ng-repeat="link in sidebar.links">
+            <a class="" href="{{link.link}}">
+		    <i class="fa fa-{{link.icon}}"></i>
+		    {{link.name}}
+	    </a>
+        </li>
+    </ul>
+</div>
