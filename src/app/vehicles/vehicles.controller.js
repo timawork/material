@@ -7,8 +7,7 @@
     vehicleCtrl.$inject = ['$scope']
 
     function vehicleCtrl($scope) {
-	var vm = this;
+        var vm = this;
     };
 
 })();
-

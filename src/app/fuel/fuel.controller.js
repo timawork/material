@@ -7,8 +7,7 @@
     fuelCtrl.$inject = ['$scope']
 
     function fuelCtrl($scope) {
-	var vm = this;
+        var vm = this;
     };
 
 })();
-
