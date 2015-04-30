@@ -25,6 +25,10 @@
             icon: "bomb",
             name: "Fuel",
             link: "#/fuel"
+        }, {
+            icon: "users",
+            name: "Contacts",
+            link: "#/contacts"
         }, ];
     };
 })();

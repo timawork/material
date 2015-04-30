@@ -1,10 +1,11 @@
 <div data-ng-controller="sidebarCtrl as sidebar">
-    <ul class="side-nav">
+    <ul class="side-nav">   
         <li data-ng-repeat="link in sidebar.links">
-            <a class="" href="{{link.link}}">
-		    <i class="fa fa-{{link.icon}}"></i>
-		    {{link.name}}
-	    </a>
+
+        	<md-button ng-href="{{link.link}} " class="md-primary  text-left fa fa-{{link.icon}}">
+		    	{{link.name}}
+		    </md-button>
+
         </li>
     </ul>
 </div>

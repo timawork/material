@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('fm', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap'])
+    angular.module('fm', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap', 'ngMaterial'])
         .config(function($stateProvider, $urlRouterProvider) {
             $stateProvider
                 .state('dashboard', {
@@ -24,6 +24,11 @@
                     templateUrl: 'app/fuel/fuel.html',
                     controller: 'fuelCtrl',
                     controllerAs: 'fuel'
+                }).state('contacts', {
+                    url: '/contacts',
+                    templateUrl: 'app/contacts/contacts.html',
+                    controller: 'contactCtrl',
+                    controllerAs: 'contacts'
                 });
 
             $urlRouterProvider.otherwise('/');
