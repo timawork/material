@@ -1,14 +1,7 @@
-// This Is A Header
-// ----------------
+// MaxTrack UI-KIT
+// ---------------- 
  
- 
-// This is a normal comment, that will become part of the
-// annotations after running through the Docco tool. Use this
-// space to describe the function or other code just below 
-// this comment. For example: 
-//
-// The `DoSomething` method does something! It doesn't take any
-// parameters... it just does something.
+// UI Kit for using it in a Maxtrack projects
 
 (function() {
     'use strict';
@@ -19,15 +12,16 @@
             'ngSanitize',
             'ngResource',
             'ui.router',
-            'ui.bootstrap'
+            'ui.ace',
+            'ngMaterial'
         ])
         .config(function($stateProvider, $urlRouterProvider) {
             $stateProvider
-                .state('dashboard', {
+                .state('buttons', {
                     url: '/',
-                    templateUrl: 'app/dashboard/dash.html',
-                    controller: 'dashCtrl',
-                    controllerAs: 'dash'
+                    templateUrl: 'app/button/btn.html',
+                    controller: 'buttonCtrl',
+                    controllerAs: 'btn'
                 }).state('vehicles', {
                     url: '/vehicles',
                     templateUrl: 'app/vehicles/vehicles.html',

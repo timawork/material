@@ -1,0 +1,137 @@
+<md-toolbar class="md-accent">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Basic Usage</h2>
+	<md-button ng-click="showSource = !showSource">Source</md-button>
+    </div>
+</md-toolbar>
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'chrome',
+			  mode: 'html'}">
+		
+		       
+		&#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-button&#x3E;Button&#x3C;/md-button&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-button md-no-ink class=&#x22;md-primary&#x22;&#x3E;Primary (md-noink)&#x3C;/md-button&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-button ng-disabled=&#x22;true&#x22; class=&#x22;md-primary&#x22;&#x3E;Disabled&#x3C;/md-button&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-button class=&#x22;md-warn&#x22;&#x3E;{{title4}}&#x3C;/md-button&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;div class=&#x22;label&#x22;&#x3E;Flat&#x3C;/div&#x3E;
+&#x9;    &#x3C;/section&#x3E;
+ 
+
+    			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'chrome',
+			  mode: 'css'}">
+		
+		        .buttondemoBasicUsage section {
+			  background: #f7f7f7;
+			  border-radius: 3px;
+			  text-align: center;
+			  margin: 1em;
+			  position: relative !important;
+			  padding-bottom: 10px; }
+			  
+			.buttondemoBasicUsage md-content {
+			  margin-right: 7px; }
+			
+			.buttondemoBasicUsage section .md-button {
+			  margin-top: 16px;
+			  margin-bottom: 16px; }
+			
+			.buttondemoBasicUsage .label {
+			  position: absolute;
+			  bottom: 5px;
+			  left: 7px;
+			  font-size: 14px;
+			  opacity: 0.54; }
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'chrome',
+			  mode: 'javascript'}">
+		
+		        (function() {
+			    'use strict';
+			
+			    angular.module('fm')
+			        .controller('buttonCtrl', buttonCtrl);
+			
+			    buttonCtrl.$inject = ['$scope'];
+			
+			    function buttonCtrl($scope) {
+			        var vm = this;
+			
+			        $scope.$parent.title = 'Buttons';
+			
+			        $scope.title1 = 'Button';
+			        $scope.title4 = 'Warn';
+			        $scope.isDisabled = true;
+			        $scope.googleUrl = 'http://google.com';
+			
+			    };
+			
+			})();
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button>Button</md-button>
+        <md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
+        <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+        <md-button class="md-warn">{{title4}}</md-button>
+        <div class="label">Flat</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-raised">Button</md-button>
+        <md-button class="md-raised md-primary">Primary</md-button>
+        <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+        <md-button class="md-raised md-warn">Warn</md-button>
+        <div class="label">Raised</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button ng-href="{{googleUrl}}" target="_blank">Default Link</md-button>
+        <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Primary Link</md-button>
+        <md-button>Default Button</md-button>
+        <div class="label">Link vs. Button</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
+        <md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
+        <md-button class="md-accent">Accent</md-button>
+        <md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>
+        <div class="label">Themed</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-icon-button md-primary" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button md-accent" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+        <md-button href="http://google.com" title="Launch Google.com in new window" target="_blank"
+        ng-disabled="true" aria-label="Google.com" class="md-icon-button launch">
+            <md-icon md-svg-icon="img/icons/launch.svg"></md-icon>
+        </md-button>
+        <div class="label">Icon Button</div>
+    </section>
+
+</md-content>

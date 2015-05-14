@@ -27,8 +27,7 @@ gulp.task('inject', ['styles'], function () {
   };
 
   var wiredepOptions = {
-    directory: 'bower_components',
-    exclude: [/bootstrap-sass-official/, /bootstrap\.css/, /bootstrap\.css/, /foundation\.css/]
+    directory: 'bower_components'
   };
 
   return gulp.src(paths.src + '/*.html')

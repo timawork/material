@@ -10,8 +10,8 @@
         var vm = this; // use vm (ViewModel) istead $scope
 
         vm.links = [{
-            icon: 'dashboard',
-            name: 'Dashboard',
+            icon: 'dot-circle-o',
+            name: 'Buttons',
             link: '#/'
         }, {
             icon: 'truck',

@@ -1,10 +1,16 @@
+<md-toolbar class="md-whiteframe-glow-z2 md-default-theme">
+    <h1 class="md-toolbar-tools" layout-align="center">
+	    <a ng-href="#/">UI-KIT</a>
+    </h1>
+</md-toolbar>
+
 <div data-ng-controller="sidebarCtrl as sidebar">
     <ul class="side-nav">
         <li data-ng-repeat="link in sidebar.links">
-            <a class="" href="{{link.link}}">
-		    <i class="fa fa-{{link.icon}}"></i>
-		    {{link.name}}
-	    </a>
+            <a class="md-button md-default-theme" href="{{link.link}}">
+                <i class="fa fa-{{link.icon}}"></i>
+                {{link.name}}
+            </a>
         </li>
     </ul>
 </div>

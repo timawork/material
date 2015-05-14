@@ -1,49 +1,16 @@
-$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+.side-nav {
+	padding: 0;
+	margin: 0;
+	list-style: none;
 
-@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
-
-$footer-height: 50px;
-
-body {
-	padding-top: 50px;
+	a.md-button {
+		padding: 12px 16px 12px 32px;
+		display: block;
+		text-align: left;
+	}
 }
 
-html, body,
-body > .container-fluid {
-	height: 100%;
-}
-
-body > .container-fluid {
-	position: relative;
-	padding-bottom: $footer-height;
-}
-
-.footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	padding: 15px;
-	background-color: $navbar-default-bg;
-	height: $footer-height;
-}
-
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
-}
-
-.sidebar {
-	width: 20%;
-	float:left;
-}
-.content {
-	width: 80%;
-	float:left;
-}
+.ace_editor { height: 200px; }
 
 // injector
 // endinjector
