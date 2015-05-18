@@ -7,7 +7,7 @@
     serviceCtrl.$inject = ['$scope']
 
     function serviceCtrl($scope) {
-	var vm = this;
+        var vm = this;
     };
 
 })();

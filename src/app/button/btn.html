@@ -1,0 +1,224 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex>
+			<h2 class="black-clr">BUTTONS</h2>
+		</div>
+		<div flex>
+
+				<div style="text-align: right;">
+
+			        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+				        <i class="fa fa-cogs"></i>
+				     </md-button>
+				</div>
+
+		</div>
+    </div>
+</md-toolbar>
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+		
+
+    &#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+        &#x3C;md-button class=&#x22;flat-btn&#x22;&#x3E;Button&#x3C;/md-button&#x3E;
+        &#x3C;md-button md-no-ink class=&#x22;flat-btn primary-link&#x22;&#x3E;Primary (md-noink)&#x3C;/md-button&#x3E;
+        &#x3C;md-button ng-disabled=&#x22;true&#x22; class=&#x22;md-primary&#x22;&#x3E;Disabled&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;flat-btn warn-link&#x22;&#x3E;{{title4}}&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;flat-btn success-link&#x22;&#x3E;Success&#x3C;/md-button&#x3E;
+        &#x3C;div class=&#x22;label&#x22;&#x3E;Flat Buttons&#x3C;/div&#x3E;
+    &#x3C;/section&#x3E;
+
+    &#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button white-btn&#x22;&#x3E;Button&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button primary-btn&#x22;&#x3E;Primary&#x3C;/md-button&#x3E;
+        &#x3C;md-button ng-disabled=&#x22;true&#x22; class=&#x22;md-raised mx-button&#x22;&#x3E;Disabled&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button warn-btn&#x22;&#x3E;Warn&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button success-btn&#x22;&#x3E;Success&#x3C;/md-button&#x3E;
+        &#x3C;div class=&#x22;label&#x22;&#x3E;Raised Buttons&#x3C;/div&#x3E;
+    &#x3C;/section&#x3E;
+
+ &#x9;&#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+        
+        &#x3C;md-button class=&#x22;md-fab white-btn&#x22; aria-label=&#x22;Profile&#x22;&#x3E;
+            &#x3C;i class=&#x22;fa fa-line-chart&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-fab primary-btn&#x22; aria-label=&#x22;Eat cake&#x22;&#x3E;
+            &#x3C;i class=&#x22;fa fa-refresh&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-fab warn-btn&#x22; aria-label=&#x22;Use Android&#x22;&#x3E;
+          &#x3C;i class=&#x22;fa fa-search&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-fab&#x22; ng-disabled=&#x22;true&#x22; aria-label=&#x22;Comment&#x22;&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-fab success-btn&#x22; aria-label=&#x22;Profile&#x22;&#x3E;
+            &#x3C;i class=&#x22;fa fa-line-chart&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+
+
+        &#x3C;md-button class=&#x22;md-fab md-mini primary-btn&#x22; aria-label=&#x22;Eat cake&#x22;&#x3E;
+            &#x3C;i class=&#x22;fa fa-refresh&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-fab md-mini warn-btn&#x22; aria-label=&#x22;Use Android&#x22;&#x3E;
+          &#x3C;i class=&#x22;fa fa-search&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-fab md-mini success-btn&#x22; aria-label=&#x22;Profile&#x22;&#x3E;
+            &#x3C;i class=&#x22;fa fa-line-chart&#x22;&#x3E;&#x3C;/i&#x3E;
+        &#x3C;/md-button&#x3E;
+        &#x3C;div class=&#x22;label&#x22;&#x3E;Round Buttons&#x3C;/div&#x3E;
+    &#x3C;/section&#x3E;
+
+    &#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button-icon white-btn&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-line-chart&#x22;&#x3E;&#x3C;/i&#x3E;Button&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button-icon primary-btn&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-refresh&#x22;&#x3E;&#x3C;/i&#x3E;Primary&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button-icon warn-btn&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-search&#x22;&#x3E;&#x3C;/i&#x3E;Warn&#x3C;/md-button&#x3E;
+        &#x3C;md-button class=&#x22;md-raised mx-button-icon success-btn&#x22;&#x3E;&#x3C;i class=&#x22;fa fa-line-chart&#x22;&#x3E;&#x3C;/i&#x3E;Success&#x3C;/md-button&#x3E;
+        &#x3C;div class=&#x22;label&#x22;&#x3E;Raised Buttons with icons&#x3C;/div&#x3E;
+    &#x3C;/section&#x3E;
+
+    &#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+        &#x3C;md-button class=&#x22;md-icon-button primary-clr&#x22; aria-label=&#x22;Settings&#x22;&#x3E;
+        &#x9;&#x3C;i class=&#x22;fa fa-line-chart&#x22;&#x3E;&#x3C;/i&#x3E;
+      &#x9;&#x3C;/md-button&#x3E;        
+      &#x9;&#x3C;md-button class=&#x22;md-icon-button warn-clr&#x22; aria-label=&#x22;Settings&#x22;&#x3E;
+        &#x9;&#x3C;i class=&#x22;fa fa-refresh&#x22;&#x3E;&#x3C;/i&#x3E;
+      &#x9;&#x3C;/md-button&#x3E;      &#x9;
+
+      &#x9;&#x3C;md-button class=&#x22;md-icon-button success-clr&#x22; aria-label=&#x22;Settings&#x22;&#x3E;
+        &#x9;&#x3C;i class=&#x22;fa fa-search&#x22;&#x3E;&#x3C;/i&#x3E;
+      &#x9;&#x3C;/md-button&#x3E;      &#x9;
+
+      &#x9;&#x3C;md-button class=&#x22;md-icon-button text-clr&#x22; aria-label=&#x22;Settings&#x22;&#x3E;
+        &#x9;&#x3C;i class=&#x22;fa fa-refresh&#x22;&#x3E;&#x3C;/i&#x3E;
+      &#x9;&#x3C;/md-button&#x3E;
+        &#x3C;div class=&#x22;label&#x22;&#x3E;Flat Buttons icons&#x3C;/div&#x3E;
+    &#x3C;/section&#x3E;		       
+
+ 
+
+    			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+		
+			/* ЦВЕТА КНОПОК */
+			primary-btn
+			warn-btn
+			success-btn
+			white-btn
+
+
+			/* Flat button */
+			flat-btn primary-clr
+			
+			/* Raised Button */
+			md-raised mx-button primary-btn
+
+			/* Round Button */	
+			md-fab primary-btn
+			md-fab primary-btn md-mini 
+
+			/* Buttons with icons */
+			md-raised mx-button-icon primary-btn
+
+			/* Flat button icon*/
+			md-icon-button primary-clr
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+		
+		        
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="flat-btn">Button</md-button>
+        <md-button md-no-ink class="flat-btn primary-clr">Primary (md-noink)</md-button>
+        <md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+        <md-button class="flat-btn warn-clr">{{title4}}</md-button>
+        <md-button class="flat-btn success-clr">Success</md-button>
+        <div class="label">Flat Buttons</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-raised mx-button white-btn">Button</md-button>
+        <md-button class="md-raised mx-button primary-btn">Primary</md-button>
+        <md-button ng-disabled="true" class="md-raised mx-button">Disabled</md-button>
+        <md-button class="md-raised mx-button warn-btn">Warn</md-button>
+        <md-button class="md-raised mx-button success-btn">Success</md-button>
+        <div class="label"></div>
+    </section>
+
+ 	<section layout="row" layout-sm="column" layout-align="center center">
+        
+        <md-button class="md-fab white-btn" aria-label="Profile">
+            <i class="fa fa-line-chart"></i>
+        </md-button>
+        <md-button class="md-fab primary-btn" aria-label="Eat cake">
+            <i class="fa fa-refresh"></i>
+        </md-button>
+        <md-button class="md-fab warn-btn" aria-label="Use Android">
+          <i class="fa fa-search"></i>
+        </md-button>
+        <md-button class="md-fab" ng-disabled="true" aria-label="Comment">
+        </md-button>
+        <md-button class="md-fab success-btn" aria-label="Profile">
+            <i class="fa fa-line-chart"></i>
+        </md-button>
+
+
+        <md-button class="md-fab md-mini primary-btn" aria-label="Eat cake">
+            <i class="fa fa-refresh"></i>
+        </md-button>
+        <md-button class="md-fab md-mini warn-btn" aria-label="Use Android">
+          <i class="fa fa-search"></i>
+        </md-button>
+        <md-button class="md-fab md-mini success-btn" aria-label="Profile">
+            <i class="fa fa-line-chart"></i>
+        </md-button>
+        <div class="label">Round Buttons</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-raised mx-button-icon white-btn"><i class="fa fa-line-chart"></i>Button</md-button>
+        <md-button class="md-raised mx-button-icon primary-btn"><i class="fa fa-refresh"></i>Primary</md-button>
+        <md-button class="md-raised mx-button-icon warn-btn"><i class="fa fa-search"></i>Warn</md-button>
+        <md-button class="md-raised mx-button-icon success-btn"><i class="fa fa-line-chart"></i>Success</md-button>
+        <div class="label">Raised Buttons with icons</div>
+    </section>
+
+    <section layout="row" layout-sm="column" layout-align="center center">
+        <md-button class="md-icon-button primary-clr" aria-label="Settings">
+        	<i class="fa fa-line-chart"></i>
+      	</md-button>        
+      	<md-button class="md-icon-button warn-clr" aria-label="Settings">
+        	<i class="fa fa-refresh"></i>
+      	</md-button>      	
+
+      	<md-button class="md-icon-button success-clr" aria-label="Settings">
+        	<i class="fa fa-search"></i>
+      	</md-button>      	
+
+      	<md-button class="md-icon-button text-clr" aria-label="Settings">
+        	<i class="fa fa-refresh"></i>
+      	</md-button>
+        <div class="label">Flat Buttons icons</div>
+    </section>
+
+</md-content>

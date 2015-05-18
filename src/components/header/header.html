@@ -1,4 +1,14 @@
-<nav class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl as header">
+<div layout="row" layout-align-sm="start center" layout-align-md="center center" layout-align-gt-md="center center">
+       
+     <md-button ng-click="sideNavToggle('left')"
+        class="sidetoggle-btn" hide-md hide-gt-md>
+        <i class="fa fa-bars"></i>
+      </md-button>
+
+        <h1><span>Maxtrack</span> & Fleet Management</h1>
+</div>
+
+<!--nav class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl as header">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" ng-click="header.collapseToggle()">
@@ -39,4 +49,4 @@
                 </li>
             </ul>
         </div>
-</nav>
+</nav-->

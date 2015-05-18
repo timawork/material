@@ -21,21 +21,25 @@
     <!-- endbuild -->
 </head>
 
-<body>
+<body ng-controller="baseController">
+    <header layout="row">
+        <div ng-include="'components/header/header.html'" style="width: 100%"  class="md-whiteframe-z1"></div>
+    </header>
+    
+    <div layout="row">
+        <div>
+            <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="md-whiteframe-z1">
+                <div ng-include="'components/sidebar/sidebar.html'"></div>
+            </md-sidenav>
+        </div>     
 
-    <div class="container-fluid">
 
-        <div ng-include="'components/header/header.html'"></div>
-
-        <div class="row">
-            <div class="sidebar" ng-include="'components/sidebar/sidebar.html'"></div>
-            <div class="content" ui-view></div>
+        <div flex>
+            <div ui-view></div>
         </div>
-
-        <div ng-include="'components/footer/footer.html'"></div>
-
     </div>
-
+	
+    <script src="../bower_components/ace-builds/src-noconflict/ace.js"></script>
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp wiredep` to automaticaly populate bower script dependencies -->

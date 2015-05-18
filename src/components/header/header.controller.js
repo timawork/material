@@ -7,12 +7,12 @@
     headerCtrl.$inject = ['$scope']
 
     function headerCtrl($scope) {
-	var vm = this; // Use vm instead of $scope
+        var vm = this; // Use vm instead of $scope
 
-        vm.collapse = "";
+        vm.collapse = '';
 
         vm.collapseToggle = function() {
-            vm.collapse = vm.collapse === "" ? "in" : "";
+            vm.collapse = vm.collapse === '' ? 'in' : '';
         };
 
         vm.status = {

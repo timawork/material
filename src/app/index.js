@@ -1,14 +1,30 @@
+// MaxTrack UI-KIT
+// ---------------- 
+ 
+// UI Kit for using it in a Maxtrack projects
+
 (function() {
     'use strict';
 
-    angular.module('fm', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ui.bootstrap', 'ngMaterial'])
+    angular.module('fm', [
+            'ngAnimate',
+            'ngCookies',
+            'ngTouch',
+            'ngSanitize',
+            'ngResource',
+            'ui.router',
+            'ui.ace',
+            'ngMaterial',
+            'ngMessages',
+        ])
+
         .config(function($stateProvider, $urlRouterProvider) {
             $stateProvider
-                .state('dashboard', {
+                .state('buttons', {
                     url: '/',
-                    templateUrl: 'app/dashboard/dash.html',
-                    controller: 'dashCtrl',
-                    controllerAs: 'dash'
+                    templateUrl: 'app/button/btn.html',
+                    controller: 'buttonCtrl',
+                    controllerAs: 'btn'
                 }).state('vehicles', {
                     url: '/vehicles',
                     templateUrl: 'app/vehicles/vehicles.html',

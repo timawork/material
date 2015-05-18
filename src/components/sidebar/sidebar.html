@@ -1,11 +1,18 @@
+
+<md-toolbar class="md-whiteframe-z1 panel3">
+    <h1 class="md-toolbar-tools" layout-align="center">
+        <a ng-href="#/">UI-KIT</a>
+    </h1>
+</md-toolbar>
+
 <div data-ng-controller="sidebarCtrl as sidebar">
     <ul class="side-nav">   
         <li data-ng-repeat="link in sidebar.links">
-
-        	<md-button ng-href="{{link.link}} " class="md-primary  text-left fa fa-{{link.icon}}">
-		    	{{link.name}}
-		    </md-button>
-
+            <md-button ng-href="{{link.link}} " class=" text-left">
+                {{link.name}}
+            </md-button>
         </li>
     </ul>
-</div>
+</div>   
+
+
