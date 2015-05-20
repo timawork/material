@@ -1,0 +1,185 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex>
+			<h2 class="black-clr">RADIO, CHECKBOXES, SWITCHES</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			     </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+
+	&#x3C;!--Radio--&#x3E;    
+	&#x9;&#x9;    &#x3C;md-radio-group ng-model=&#x22;data.group1&#x22;&#x3E;
+	&#x9;&#x9;      &#x3C;md-radio-button value=&#x22;Apple&#x22; class=&#x22;primary-radio&#x22;&#x3E;Apple&#x3C;/md-radio-button&#x3E;
+	&#x9;&#x9;      &#x3C;md-radio-button value=&#x22;Banana&#x22; class=&#x22;warn-radio&#x22;&#x3E; Banana &#x3C;/md-radio-button&#x3E;
+	&#x9;&#x9;      &#x3C;md-radio-button value=&#x22;Mango&#x22; class=&#x22;success-radio&#x22;&#x3E;Mango&#x3C;/md-radio-button&#x3E;
+	&#x9;&#x9;    &#x3C;/md-radio-group&#x3E;
+
+
+	&#x3C;!--Checkboxes--&#x3E;
+	&#x3C;md-checkbox ng-model=&#x22;data.cb1&#x22; aria-label=&#x22;Checkbox 1&#x22; class=&#x22;warn-checkbox&#x22;&#x3E;&#x3C;/md-checkbox&#x3E;
+	&#x3C;md-checkbox ng-model=&#x22;data.cb1&#x22; aria-label=&#x22;Checkbox 1&#x22; class=&#x22;success-checkbox&#x22;&#x3E;&#x3C;/md-checkbox&#x3E;
+	&#x3C;md-checkbox ng-model=&#x22;data.cb1&#x22; aria-label=&#x22;Checkbox 1&#x22; class=&#x22;primary-checkbox&#x22;&#x3E;&#x3C;/md-checkbox&#x3E;
+
+	&#x3C;!--Switches--&#x3E;
+	&#x3C;md-switch ng-model=&#x22;data.cb1&#x22; aria-label=&#x22;Switch 1&#x22; class=&#x22;primary-switch&#x22;&#x3E;&#x3C;/md-switch&#x3E;
+	&#x3C;md-switch ng-model=&#x22;data.cb1&#x22; aria-label=&#x22;Switch 1&#x22; class=&#x22;warn-switch&#x22;&#x3E;&#x3C;/md-switch&#x3E;
+	&#x3C;md-switch ng-model=&#x22;data.cb1&#x22; aria-label=&#x22;Switch 1&#x22; class=&#x22;success-switch&#x22;&#x3E;&#x3C;/md-switch&#x3E;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+		
+				/*классы для radio*/
+				.primary-radio
+				.warn-radio
+				.success-radio
+
+				/*классы для checkbox*/
+				.warn-checkbox
+				.success-checkbox
+				.primary-checkbox
+
+				//классы для switch*/
+				.primary-switch
+				.warn-switch
+				.success-switch
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+		
+		        
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-wrap>
+		<div flex>
+		  <form ng-submit="submit()">
+		    <p>Selected Value: <span class="radioValue">{{ data.group1 }}</span> </p>
+		    <md-radio-group ng-model="data.group1">
+		      <md-radio-button value="Apple" class="primary-radio">Apple</md-radio-button>
+		      <md-radio-button value="Banana" class="warn-radio"> Banana </md-radio-button>
+		      <md-radio-button value="Mango" class="success-radio">Mango</md-radio-button>
+		    </md-radio-group>
+		    <hr />
+		    <p>Selected Value: <span class="radioValue">{{ data.group2 }}</span></p>
+		    <md-radio-group ng-model="data.group2" class="primary-radio">
+		        <md-radio-button ng-repeat="d in radioData"
+		                         ng-value="d.value"
+		                         ng-disabled=" d.isDisabled ">
+		            {{ d.label }}
+		        </md-radio-button>
+		    </md-radio-group>
+		    <p>
+		      <md-button class="mx-button md-raised success-btn" ng-click="addItem()" type="button">Add</md-button>
+		      <md-button class="mx-button md-raised warn-btn" ng-click="removeItem()" type="button">Remove</md-button>
+		    </p>
+		  </form>	   	
+		</div>	
+
+		<div flex style="text-align: left">
+			<div layout-padding>
+			  <p> Using ngModel: </p>
+			  <div>
+			    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" class="warn-checkbox">
+			      Checkbox 1: {{ data.cb1 }}
+			    </md-checkbox>
+			  </div>
+			  <div>
+			    <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="success-checkbox">
+			      Checkbox 2 (warn-clr): {{ data.cb2 }}
+			    </md-checkbox>
+			  </div>
+			  <div>
+			    <md-checkbox ng-disabled="true" aria-label="Disabled checkbox" ng-model="data.cb3">
+			      Checkbox: Disabled
+			    </md-checkbox>
+			  </div>
+			  <div>
+			    <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb4" ng-init="data.cb4=true">
+			      Checkbox: Disabled, Checked
+			    </md-checkbox>
+			  </div>
+			  <div>
+			    <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="primary-checkbox">
+			      Checkbox (md-primary): No Ink
+			    </md-checkbox>
+			  </div>
+			</div>	 
+
+			<div layout-padding>
+			  <p> Using ngChecked: </p>
+			  <div layout="row" layout-padding>
+			    <fieldset layout="column">
+			      <legend>Using <code>&lt;md-checkbox&gt;</code></legend>
+			      <md-checkbox ng-repeat="item in items" ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+			        {{ item }} <span ng-if="exists(item, selected)">selected</span>
+			      </md-checkbox>
+			    </fieldset>
+			    <fieldset layout="column" class="standard ">
+			      <legend>Using <code>&lt;input type="checkbox"&gt;</code></legend>
+			      <div ng-repeat="item in items" class="standard" >
+			        <label>
+			          <input type="checkbox" ng-checked="exists(item, selected)" ng-click="toggle(item, selected)" class="success-checkbox"/>
+			          {{ item }}
+			        </label>
+			      </div>
+			    </fieldset>
+			  </div>
+			  <div layout="column">
+			    <md-checkbox ng-checked="selected.length >= 2" disabled>Two or more items are selected</md-checkbox>
+			    <span class="info">Selected: {{ selected }}</span>
+			  </div>
+			</div>  	
+		</div>
+   	</section>
+	<section layout="row" layout-wrap>
+		<div class="inset">
+		  <md-switch ng-model="data.cb1" aria-label="Switch 1" class="primary-switch">
+		    Switch 1: {{ data.cb1 }}
+		  </md-switch>
+		  <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'yup'" ng-false-value="'nope'" class="warn-switch">
+		    Switch 2 (md-warn): {{ data.cb2 }}
+		  </md-switch>
+		  <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
+		    Switch (Disabled)
+		  </md-switch>
+		  <md-switch ng-disabled="true" aria-label="Disabled active switch" ng-model="data.cb4">
+		    Switch (Disabled, Active)
+		  </md-switch>
+		  <md-switch class="success-switch" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5">
+		    Switch (md-primary): No Ink
+		  </md-switch>
+		  <md-switch ng-model="data.cb6" aria-label="Switch 6" ng-change="onChange(data.cb6)" class="success-switch">
+		    Switch 6 message: {{ message }}
+		  </md-switch>
+		</div>
+	</section>
+</md-content>

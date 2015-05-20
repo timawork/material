@@ -1,0 +1,112 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex>
+			<h2 class="black-clr">PEROGRESS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			     </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+&#x3C;!-- Slow Circle progress--&#x3E;
+&#x3C;md-progress-circular class=&#x22;primary-circle-progress&#x22; md-mode=&#x22;determinate&#x22; value=&#x22;{{determinateValue}}&#x22;&#x3E;&#x3C;/md-progress-circular&#x3E;
+
+&#x3C;!-- Fast Circle progress--&#x3E;
+&#x3C;md-progress-circular class=&#x22;primary-circle-progress&#x22; md-mode=&#x22;indeterminate&#x22;&#x3E;&#x3C;/md-progress-circular&#x3E;
+
+&#x3C;!-- Linear progress 1 --&#x3E;
+&#x3C;md-progress-linear class=&#x22;primary-line-progress&#x22; md-mode=&#x22;indeterminate&#x22;&#x3E;&#x3C;/md-progress-linear&#x3E;
+
+&#x3C;!-- Linear progress 2 --&#x3E;
+&#x3C;md-progress-linear class=&#x22;primary-line-progress&#x22; md-mode=&#x22;buffer&#x22; value=&#x22;{{determinateValue}}&#x22; md-buffer-value=&#x22;{{determinateValue2}}&#x22;&#x3E;
+&#x3C;/md-progress-linear&#x3E;
+	
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+
+/*Circle Цвета и формы*/		
+.primary-circle-progress			
+.warn-circle-progress			
+.success-circle-progress
+
+/*Linear Цвета и формы*/
+.primary-line-progress			
+.warn-line-progress			
+.success-line-progress			
+
+			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+		
+		        
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-wrap layout-padding layout-align="space-around end">
+		<div>
+      		<md-progress-circular class="primary-circle-progress" md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>      		
+    	</div>		
+    	<div>
+      		<md-progress-circular class="warn-circle-progress" md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>      		
+    	</div>    	
+    	<div>
+      		<md-progress-circular class="success-circle-progress" md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>      		
+    	</div>
+	</section>
+
+	<section layout="row" layout-wrap layout-padding layout-align="space-around end">
+		<div>
+			<md-progress-circular class="primary-circle-progress" md-mode="indeterminate"></md-progress-circular>
+		</div>		
+		<div>
+			<md-progress-circular class="warn-circle-progress" md-mode="indeterminate"></md-progress-circular>
+		</div>		
+		<div>
+			<md-progress-circular class="success-circle-progress" md-mode="indeterminate"></md-progress-circular>
+		</div>
+	</section>
+	<section layout="row" layout-wrap layout-padding layout-align="space-around end">
+		<md-progress-linear class="primary-line-progress" md-mode="indeterminate"></md-progress-linear>		<br>		
+		<md-progress-linear class="warn-line-progress" md-mode="indeterminate"></md-progress-linear>		<br>
+		<md-progress-linear class="success-line-progress" md-mode="indeterminate"></md-progress-linear>
+			<br>
+	</section>
+	<section layout="row" layout-wrap layout-padding layout-align="space-around end">
+		<md-progress-linear class="primary-line-progress" md-mode="buffer" value="{{determinateValue}}" md-buffer-value="{{determinateValue2}}">
+  		</md-progress-linear>
+  		<br>		
+  		<md-progress-linear class="warn-line-progress" md-mode="buffer" value="{{determinateValue}}" md-buffer-value="{{determinateValue2}}">
+  		</md-progress-linear>
+  		<br>  		
+  		<md-progress-linear class="success-line-progress" md-mode="buffer" value="{{determinateValue}}" md-buffer-value="{{determinateValue2}}">
+  		</md-progress-linear>
+  		<br>
+	</section>
+</md-content>

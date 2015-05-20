@@ -26,13 +26,13 @@
                     controller: 'buttonCtrl',
                     controllerAs: 'btn'
                 }).state('vehicles', {
-                    url: '/vehicles',
-                    templateUrl: 'app/vehicles/vehicles.html',
+                    url: '/form_elements',
+                    templateUrl: 'app/form_elements/vehicles.html',
                     controller: 'vehiclesCtrl',
                     controllerAs: 'vehicles'
                 }).state('services', {
-                    url: '/services',
-                    templateUrl: 'app/services/services.html',
+                    url: '/radio_checkbox',
+                    templateUrl: 'app/radio_checkbox/services.html',
                     controller: 'servicesCtrl',
                     controllerAs: 'services'
                 }).state('fuel', {
@@ -41,8 +41,8 @@
                     controller: 'fuelCtrl',
                     controllerAs: 'fuel'
                 }).state('contacts', {
-                    url: '/contacts',
-                    templateUrl: 'app/contacts/contacts.html',
+                    url: '/progress_bars',
+                    templateUrl: 'app/progress_bars/contacts.html',
                     controller: 'contactCtrl',
                     controllerAs: 'contacts'
                 });

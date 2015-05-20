@@ -16,11 +16,15 @@
         }, {
             icon: 'truck',
             name: 'Form Elements',
-            link: '#/vehicles'
+            link: '#/form_elements'
         }, {
             icon: 'wrench',
-            name: 'Services',
-            link: '#/services'
+            name: 'Radio, checkboxes, switches',
+            link: '#/radio_checkbox'
+        }, {
+            icon: 'truck',
+            name: 'Progress bars, circles',
+            link: '#/progress_bars'
         }];
     };
 })();

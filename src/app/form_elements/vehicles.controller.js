@@ -22,10 +22,17 @@
 	      postalCode : '94043'
 	    };
 
-	  $scope.project = {
-	    description: 'Nuclear Missile Defense System',
-	    rate: 500
-	  };
+		$scope.project = {
+		  description: 'Nuclear Missile Defense System',
+		  rate: 500
+		};
+
+	    $scope.user = {
+	      name: 'John Doe',
+	      email: '',
+	      phone: '',
+	      address: 'Mountain View, CA'
+	    };
 
     };
 

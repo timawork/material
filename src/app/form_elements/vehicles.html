@@ -1,0 +1,277 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex>
+			<h2 class="black-clr">FORM ELEMENTS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			     </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+		
+
+&#x3C;section layout=&#x22;column&#x22; layout-wrap&#x3E;
+&#x9;   &#x9;
+
+&#x9;&#x9;  &#x3C;md-content layout-padding class=&#x22;nobackground&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;form name=&#x22;userForm&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;div layout layout-sm=&#x22;column&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container style=&#x22;width:80%&#x22; class=&#x22;primary-clr&#x22;&#x3E;
+&#x9;&#x9;            &#x3C;label&#x3E;Company (Disabled)&#x3C;/label&#x3E;
+&#x9;&#x9;            &#x3C;input ng-model=&#x22;user.company&#x22; disabled&#x3E;
+&#x9;&#x9;          &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;          &#x3C;label&#x3E;Submission Date&#x3C;/label&#x3E;
+&#x9;&#x9;          &#x3C;input type=&#x22;date&#x22; ng-model=&#x22;user.submissionDate&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;div layout layout-sm=&#x22;column&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;          &#x3C;label&#x3E;First name&#x3C;/label&#x3E;
+&#x9;&#x9;          &#x3C;input ng-model=&#x22;user.firstName&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;          &#x3C;label&#x3E;Last Name&#x3C;/label&#x3E;
+&#x9;&#x9;          &#x3C;input ng-model=&#x22;theMax&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;        &#x3C;label&#x3E;Address&#x3C;/label&#x3E;
+&#x9;&#x9;        &#x3C;input ng-model=&#x22;user.address&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;md-input-container md-no-float&#x3E;
+&#x9;&#x9;        &#x3C;input ng-model=&#x22;user.address2&#x22; placeholder=&#x22;Address 2&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;div layout layout-sm=&#x22;column&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;          &#x3C;label&#x3E;City&#x3C;/label&#x3E;
+&#x9;&#x9;          &#x3C;input ng-model=&#x22;user.city&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;          &#x3C;label&#x3E;State&#x3C;/label&#x3E;
+&#x9;&#x9;          &#x3C;input ng-model=&#x22;user.state&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;          &#x3C;label&#x3E;Postal Code&#x3C;/label&#x3E;
+&#x9;&#x9;          &#x3C;input ng-model=&#x22;user.postalCode&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;md-input-container flex&#x3E;
+&#x9;&#x9;        &#x3C;label&#x3E;Biography&#x3C;/label&#x3E;
+&#x9;&#x9;        &#x3C;textarea ng-model=&#x22;user.biography&#x22; columns=&#x22;1&#x22; md-maxlength=&#x22;150&#x22;&#x3E;&#x3C;/textarea&#x3E;
+&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;    &#x3C;/form&#x3E;
+&#x9;&#x9;  &#x3C;/md-content&#x3E;
+   &#x9;&#x3C;/section&#x3E;
+
+   &#x9;&#x3C;section layout=&#x22;column&#x22; layout-wrap&#x3E;
+   &#x9;&#x9;&#x3C;md-content layout-padding class=&#x22;nobackground&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;form name=&#x22;projectForm&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;label&#x3E;Description&#x3C;/label&#x3E;
+&#x9;&#x9;        &#x3C;input md-maxlength=&#x22;30&#x22; required name=&#x22;description&#x22; ng-model=&#x22;project.description&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;ng-messages for=&#x22;expression&#x22; role=&#x22;alert&#x22;&#x3E;
+
+&#x9;&#x9;        &#x3C;div ng-messages=&#x22;projectForm.description.$error&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;div ng-message=&#x22;required&#x22;&#x3E;This is required.&#x3C;/div&#x3E;
+&#x9;&#x9;          &#x3C;div ng-message=&#x22;md-maxlength&#x22;&#x3E;The name has to be less than 30 characters long.&#x3C;/div&#x3E;
+&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;label&#x3E;Client Name&#x3C;/label&#x3E;
+&#x9;&#x9;        &#x3C;input required name=&#x22;clientName&#x22; ng-model=&#x22;project.clientName&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;div ng-messages=&#x22;projectForm.clientName.$error&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;div ng-message=&#x22;required&#x22;&#x3E;This is required.&#x3C;/div&#x3E;
+&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;label&#x3E;Hourly Rate (USD)&#x3C;/label&#x3E;
+&#x9;&#x9;        &#x3C;input required type=&#x22;number&#x22; step=&#x22;any&#x22; name=&#x22;rate&#x22; ng-model=&#x22;project.rate&#x22; min=&#x22;800&#x22; max=&#x22;4999&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;div ng-messages=&#x22;projectForm.rate.$error&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;div ng-message=&#x22;required&#x22;&#x3E;You&#x27;ve got to charge something! You can&#x27;t just &#x3C;b&#x3E;give away&#x3C;/b&#x3E; a Missile Defense System.&#x3C;/div&#x3E;
+&#x9;&#x9;          &#x3C;div ng-message=&#x22;min&#x22;&#x3E;You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!&#x3C;/div&#x3E;
+&#x9;&#x9;          &#x3C;div ng-message=&#x22;max&#x22;&#x3E;$5,000 an hour? That&#x27;s a little ridiculous. I doubt event Bill Clinton could afford that.&#x3C;/div&#x3E;
+&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;    &#x3C;/form&#x3E;
+  &#x9;&#x9;&#x3C;/md-content&#x3E;
+   &#x9;&#x3C;/section&#x3E;
+
+   &#x9;&#x3C;section layout=&#x22;column&#x22; layout-wrap&#x3E;
+   &#x9;&#x9;&#x3C;md-content layout-padding class=&#x22;autoScroll nobackground&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;md-input-container class=&#x22;md-icon-float&#x22; &#x3E;
+&#x9;&#x9;      &#x3C;!-- Use floating label instead of placeholder --&#x3E;
+&#x9;&#x9;      &#x3C;label&#x3E;Name&#x3C;/label&#x3E;
+&#x9;&#x9;      &#x3C;md-icon class=&#x22;fa fa-user name&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;      &#x3C;input ng-model=&#x22;user.name&#x22; type=&#x22;text&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;    &#x3C;md-input-container md-no-float&#x3E;
+&#x9;&#x9;      &#x3C;md-icon class=&#x22;fa fa-phone&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;      &#x3C;input ng-model=&#x22;user.phone&#x22; type=&#x22;text&#x22; placeholder=&#x22;Phone Number&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;    &#x3C;md-input-container &#x3E;
+&#x9;&#x9;      &#x3C;!-- Use floating placeholder instead of label --&#x3E;
+&#x9;&#x9;      &#x3C;md-icon class=&#x22;email fa fa-envelope&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;      &#x3C;input ng-model=&#x22;user.email&#x22; type=&#x22;email&#x22; placeholder=&#x22;Email (required)&#x22; ng-required=&#x22;true&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;    &#x3C;md-input-container md-no-float&#x3E;
+&#x9;&#x9;      &#x3C;md-icon style=&#x22;display:inline-block;&#x22; class=&#x22;fa fa-map-marker&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;      &#x3C;input ng-model=&#x22;user.address&#x22; type=&#x22;text&#x22; placeholder=&#x22;Address&#x22; &#x3E;
+&#x9;&#x9;    &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;  &#x3C;/md-content&#x3E;
+   &#x9;&#x3C;/section&#x3E;
+    
+ 
+
+    			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+		
+			
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+		
+		        
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="column" layout-wrap>
+	   	
+
+		  <md-content layout-padding class="nobackground">
+		    <form name="userForm">
+		      <div layout layout-sm="column">
+		        <md-input-container style="width:80%" class="primary-clr">
+		            <label>Company (Disabled)</label>
+		            <input ng-model="user.company" disabled>
+		          </md-input-container>
+		        <md-input-container flex>
+		          <label>Submission Date</label>
+		          <input type="date" ng-model="user.submissionDate">
+		        </md-input-container>
+		      </div>
+		      <div layout layout-sm="column">
+		        <md-input-container flex>
+		          <label>First name</label>
+		          <input ng-model="user.firstName">
+		        </md-input-container>
+		        <md-input-container flex>
+		          <label>Last Name</label>
+		          <input ng-model="theMax">
+		        </md-input-container>
+		      </div>
+		      <md-input-container flex>
+		        <label>Address</label>
+		        <input ng-model="user.address">
+		      </md-input-container>
+		      <md-input-container md-no-float>
+		        <input ng-model="user.address2" placeholder="Address 2">
+		      </md-input-container>
+		      <div layout layout-sm="column">
+		        <md-input-container flex>
+		          <label>City</label>
+		          <input ng-model="user.city">
+		        </md-input-container>
+		        <md-input-container flex>
+		          <label>State</label>
+		          <input ng-model="user.state">
+		        </md-input-container>
+		        <md-input-container flex>
+		          <label>Postal Code</label>
+		          <input ng-model="user.postalCode">
+		        </md-input-container>
+		      </div>
+		      <md-input-container flex>
+		        <label>Biography</label>
+		        <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+		      </md-input-container>
+		    </form>
+		  </md-content>
+   	</section>
+
+   	<section layout="column" layout-wrap>
+   		<md-content layout-padding class="nobackground">
+		    <form name="projectForm">
+		      <md-input-container>
+		        <label>Description</label>
+		        <input md-maxlength="30" required name="description" ng-model="project.description">
+		        <ng-messages for="expression" role="alert">
+
+		        <div ng-messages="projectForm.description.$error">
+		          <div ng-message="required">This is required.</div>
+		          <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+		        </div>
+		      </md-input-container>
+		      <md-input-container>
+		        <label>Client Name</label>
+		        <input required name="clientName" ng-model="project.clientName">
+		        <div ng-messages="projectForm.clientName.$error">
+		          <div ng-message="required">This is required.</div>
+		        </div>
+		      </md-input-container>
+		      <md-input-container>
+		        <label>Hourly Rate (USD)</label>
+		        <input required type="number" step="any" name="rate" ng-model="project.rate" min="800" max="4999">
+		        <div ng-messages="projectForm.rate.$error">
+		          <div ng-message="required">You've got to charge something! You can't just <b>give away</b> a Missile Defense System.</div>
+		          <div ng-message="min">You should charge at least $800 an hour. This job is a big deal... if you mess up, everyone dies!</div>
+		          <div ng-message="max">$5,000 an hour? That's a little ridiculous. I doubt event Bill Clinton could afford that.</div>
+		        </div>
+		      </md-input-container>
+		    </form>
+  		</md-content>
+   	</section>
+
+   	<section layout="column" layout-wrap>
+   		<md-content layout-padding class="autoScroll nobackground">
+		    <md-input-container class="md-icon-float" >
+		      <!-- Use floating label instead of placeholder -->
+		      <label>Name</label>
+		      <md-icon class="fa fa-user name"></md-icon>
+		      <input ng-model="user.name" type="text">
+		    </md-input-container>
+		    <md-input-container md-no-float>
+		      <md-icon class="fa fa-phone"></md-icon>
+		      <input ng-model="user.phone" type="text" placeholder="Phone Number">
+		    </md-input-container>
+		    <md-input-container >
+		      <!-- Use floating placeholder instead of label -->
+		      <md-icon class="email fa fa-envelope"></md-icon>
+		      <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+		    </md-input-container>
+		    <md-input-container md-no-float>
+		      <md-icon style="display:inline-block;" class="fa fa-map-marker"></md-icon>
+		      <input ng-model="user.address" type="text" placeholder="Address" >
+		    </md-input-container>
+		  </md-content>
+   	</section>
+
+</md-content>

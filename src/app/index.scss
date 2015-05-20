@@ -108,6 +108,10 @@ $success: #5f9e8b!important;
 $white: #fff!important;
 $text-clr: #333!important;
 
+$primary-rgba: rgba(0, 24, 80, 0.3)!important;
+$warn-rgba: rgba(207, 31, 33, 0.3)!important;
+$success-rgba: rgba(22, 183, 108, 0.3)!important;
+
 .primary-clr {
 	color: $primary
 }
@@ -201,3 +205,162 @@ form {
 	background-color: transparent!important;
  }
 
+md-input-container > md-icon {
+	font-size: 22px!important;
+}
+
+.md-input-focused .md-input {
+	border-color: $primary;
+}
+
+.md-input-focused label {
+	color: $primary;
+}
+
+.md-input-focused md-icon {
+	color: $primary;
+}
+
+//radio buttons
+
+.primary-radio .md-on {
+	background-color: $primary
+}
+.primary-radio .md-off {
+	border-color: $primary
+}
+
+.warn-radio .md-on {
+	background-color: $warn
+}
+.warn-radio .md-off {
+	border-color: $warn
+}
+
+.success-radio .md-on {
+	background-color: $success
+}
+.success-radio .md-off {
+	border-color: $success
+}
+
+.md-default-theme[disabled] .md-container .md-off {
+border-color: rgba(0,0,0,0.26)!important;
+}
+
+//checkbox
+.warn-checkbox.md-checked .md-icon {
+	background-color: $warn
+}
+.success-checkbox.md-checked .md-icon {
+	background-color: $success
+}
+.primary-checkbox.md-checked .md-icon {
+	background-color: $primary
+}
+
+
+//switches
+.primary-switch.md-checked .md-thumb {
+	background-color: $primary
+}
+
+.primary-switch.md-checked .md-bar{
+	background-color: $primary-rgba;
+}
+
+.warn-switch.md-checked .md-thumb {
+	background-color: $warn
+}
+
+.warn-switch.md-checked .md-bar{
+	background-color: $warn-rgba;
+}
+
+.success-switch.md-checked .md-thumb {
+	background-color: $success
+}
+
+.success-switch.md-checked .md-bar {
+	background-color: $success-rgba
+}
+
+//circle progress
+.primary-circle-progress .md-inner .md-right .md-half-circle{
+	border-right-color: $primary;
+	border-top-color: $primary;
+}
+
+.primary-circle-progress .md-inner .md-left .md-half-circle{
+	border-left-color: $primary;
+	border-top-color: $primary;
+}
+
+
+.warn-circle-progress .md-inner .md-right .md-half-circle{
+	border-right-color: $warn;
+	border-top-color: $warn;
+}
+
+.warn-circle-progress .md-inner .md-left .md-half-circle{
+	border-left-color: $warn;
+	border-top-color: $warn;
+}
+
+.warn-circle-progress .md-inner .md-gap {
+	border-top-color: $warn;
+	border-bottom-color: $warn;
+}
+
+.success-circle-progress .md-inner .md-right .md-half-circle{
+	border-right-color: $success;
+	border-top-color: $success;
+}
+
+.success-circle-progress .md-inner .md-left .md-half-circle{
+	border-left-color: $success;
+	border-top-color: $success;
+}
+
+.success-circle-progress .md-inner .md-gap {
+	border-top-color: $success;
+	border-bottom-color: $success;
+}
+
+
+//linear progress
+.primary-line-progress .md-container{
+	background-color: $primary-rgba;
+}
+
+.primary-line-progress .md-bar{
+	background-color: $primary;
+}
+
+.primary-line-progress .md-dashed:before {
+	background-color: $primary-rgba;
+}
+
+.warn-line-progress .md-container{
+	background-color: $warn-rgba;
+}
+
+.warn-line-progress .md-bar{
+	background-color: $warn;
+}
+
+.warn-line-progress .md-dashed:before {
+	background-color: $warn-rgba;
+}
+
+.success-line-progress .md-container{
+	background-color: $success-rgba;
+}
+
+.success-line-progress .md-bar{
+	background-color: $success;
+}
+
+.success-line-progress .md-dashed:before {
+	background-color: $success-rgba;
+}
