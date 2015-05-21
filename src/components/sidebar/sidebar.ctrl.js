@@ -25,6 +25,10 @@
             icon: 'truck',
             name: 'Progress bars, circles',
             link: '#/progress_bars'
+        }, {
+            icon: 'truck',
+            name: 'Chips',
+            link: '#/chips'
         }];
     };
 })();

@@ -1,0 +1,143 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex>
+			<h2 class="black-clr">CHIPS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			     </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+
+
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+		
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+		
+		        
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-wrap style="text-align:left">
+		<div layout="column">
+		  <md-content class="md-padding nobackground " layout="column">
+		    <p>Use a custom chip template.</p>
+		    <md-chips ng-model="chips.roFruitNames" readonly="chips.readonly" class="primary-chip">
+		      <md-chip-template>
+		        <strong>{{$chip}}</strong>
+		        <em>(fruit)</em>
+		      </md-chip-template>
+		    </md-chips>
+		    <p>Use the default chip template.</p>
+		    <md-chips ng-model="chips.fruitNames" readonly="chips.readonly"></md-chips>
+		    <p>Use Placeholders and override hint texts.</p>
+		    <md-chips
+		    	ng-class="primary-chip "
+		        ng-model="chips.tags"
+		        readonly="chips.readonly"
+		        placeholder="Enter a tag"
+		        delete-button-label="Remove Tag"
+		        delete-hint="Press delete to remove tag"
+		        secondary-placeholder="+Tag"></md-chips>
+		    <p>Display an ordered set of objects as chips (with custom template).</p>
+		    <md-chips class="" ng-model="chips.vegObjs" readonly="chips.readonly"
+		        md-on-append="chips.newVeg($chip)">
+		      <md-chip-template>
+		        <span>
+		          <strong>{{$chip.name}}</strong>
+		          <em>({{$chip.type}})</em>
+		        </span>
+		      </md-chip-template>
+		    </md-chips>
+		    <br/>
+		    <md-checkbox ng-model="chips.readonly">Readonly</md-checkbox>
+		  </md-content>
+		</div>		
+   	</section>
+
+
+	<section layout="row" layout-wrap style="text-align:left" class="chipsdemoContactChips">
+		<div layout="column">
+		  <md-content class="md-padding autocomplete nobackground">
+		    <p>Contact Chips.</p>
+		    <md-contact-chips
+		        ng-model="chips.contacts"
+		        md-contacts="chips.querySearch($query)"
+		        md-contact-name="name"
+		        md-contact-image="image"
+		        md-contact-email="email"
+		        md-require-match
+		        filter-selected="chips.filterSelected"
+		        placeholder="To">
+		    </md-contact-chips>
+		    <md-list class="fixedRows">
+		      <md-subheader class="md-no-sticky nobackground">Contacts</md-subheader>
+		      <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in chips.allContacts"
+		          ng-if="chips.contacts.indexOf(contact) < 0">
+		        <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
+		        <div class="md-list-item-text compact">
+		          <h3>{{contact.name}}</h3>
+		          <p>{{contact.email}}</p>
+		        </div>
+		      </md-list-item>
+		      <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in chips.contacts">
+		        <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
+		        <div class="md-list-item-text compact">
+		          <h3>{{contact.name}}</h3>
+		          <p>{{contact.email}}</p>
+		        </div>
+		      </md-list-item>
+		    </md-list>
+		  </md-content>
+	    </div>
+	</section>
+
+	<section layout="row" layout-wrap style="text-align: left">
+		<md-content class="md-padding" layout="column">
+		    <p>Display a set of items as chips.</p>
+		    <md-chips>
+		      <md-chip>Hockey</md-chip>
+		      <md-chip>Lacrosse</md-chip>
+		      <md-chip>Baseball</md-chip>
+		      <!-- Static chips are transcluded -->
+		      <md-chip>{{chips.chipText}}</md-chip>
+		    </md-chips>
+		    <p class="note">
+		      Static chips cannot be selected, removed or edited, and are not part of any model.<br/>
+		      If no <code>ng-model</code> is provided, there are no input elements in <code>md-chips</code>.
+		    </p>
+		</md-content>	
+	</section>
+</md-content>

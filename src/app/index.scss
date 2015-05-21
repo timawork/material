@@ -100,6 +100,8 @@ header {
 
 
 
+
+
 //=============== MAXTRACK & FLEET
 
 $primary: #224868!important;
@@ -363,4 +365,41 @@ border-color: rgba(0,0,0,0.26)!important;
 
 .success-line-progress .md-dashed:before {
 	background-color: $success-rgba;
+}
+
+.md-chips.md-focused {
+	box-shadow: 0 2px $primary;
+}
+
+
+//выравнивание chipsov
+ .chipsdemoContactChips .contact-item {
+ 	float: left;
+ 	box-sizing: border-box;
+ 	width: 33%;
+ }
+ .chipsdemoContactChips .contact-item .md-list-item-text p {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+//chips all in primary color
+.md-chip.md-focused {
+	background: $primary;
+}
+
+
+/*====MEDIA====*/
+
+@media only screen and (max-width: 1000px) {
+ .chipsdemoContactChips .contact-item {
+ 	width: 50%;
+ }	
+}
+
+@media only screen and (max-width: 830px) {
+ .chipsdemoContactChips .contact-item {
+ 	width: 100%;
+ }	
 }

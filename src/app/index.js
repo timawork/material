@@ -45,6 +45,11 @@
                     templateUrl: 'app/progress_bars/contacts.html',
                     controller: 'contactCtrl',
                     controllerAs: 'contacts'
+                }).state('chips', {
+                    url: '/chips',
+                    templateUrl: 'app/chips/chips.html',
+                    controller: 'chipsesCtrl',
+                    controllerAs: 'chips'
                 });
 
             $urlRouterProvider.otherwise('/');
