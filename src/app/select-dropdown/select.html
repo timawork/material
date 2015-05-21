@@ -1,0 +1,137 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">SELECT and DROPDOWNS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+&#x9;&#x9;  &#x3C;md-select placeholder=&#x22;Pick&#x22; ng-model=&#x22;someVal&#x22; class=&#x22;primary-select&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;md-option value=&#x22;1&#x22;&#x3E;One&#x3C;/md-option&#x3E;
+&#x9;&#x9;    &#x3C;md-option value=&#x22;2&#x22;&#x3E;Two&#x3C;/md-option&#x3E;
+&#x9;&#x9;  &#x3C;/md-select&#x3E;
+
+
+
+&#x9;&#x9;&#x9;&#x3C;div layout=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;div layout=&#x22;column&#x22; layout-align=&#x22;center center&#x22; style=&#x22;height: 100px;&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-select ng-model=&#x22;favoriteTopping&#x22; placeholder=&#x22;Favorite Topping&#x22;&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-optgroup label=&#x22;Meats&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-option ng-value=&#x22;topping.name&#x22; ng-repeat=&#x22;topping in toppings | filter: {category: &#x27;meat&#x27; }&#x22;&#x3E;{{topping.name}}&#x3C;/md-option&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-optgroup&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-optgroup label=&#x22;Veggies&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-option ng-value=&#x22;topping.name&#x22; ng-repeat=&#x22;topping in toppings | filter: {category: &#x27;veg&#x27; }&#x22;&#x3E;{{topping.name}}&#x3C;/md-option&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-optgroup&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;/md-select&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;p class=&#x22;md-caption&#x22;&#x3E;{{ favoriteTopping ? &#x27;Your favorite topping is &#x27; + favoriteTopping : &#x27;Please select a topping&#x27;}}&#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;&#x3C;/div&#x3E;&#x9;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+		
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+	  $scope.toppings = [
+	    { category: 'meat', name: 'Pepperoni' },
+	    { category: 'meat', name: 'Sausage' },
+	    { category: 'meat', name: 'Ground Beef' },
+	    { category: 'meat', name: 'Bacon' },
+	    { category: 'veg', name: 'Mushrooms' },
+	    { category: 'veg', name: 'Onion' },
+	    { category: 'veg', name: 'Green Pepper' },
+	    { category: 'veg', name: 'Green Olives' },
+	  ];		
+		        
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-wrap layout-padding style="text-align: center">
+		<div flex>
+		  <md-select placeholder="Pick" ng-model="someVal" class="primary-select">
+		    <md-option value="1">One</md-option>
+		    <md-option value="2">Two</md-option>
+		  </md-select>
+		</div>
+
+		<div flex>
+			<div layout="column" layout-align="center center">
+			  <div layout="column" layout-align="center center" style="height: 100px;">
+			    <md-select ng-model="favoriteTopping" placeholder="Favorite Topping">
+			      <md-optgroup label="Meats">
+			        <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
+			      </md-optgroup>
+			      <md-optgroup label="Veggies">
+			        <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
+			      </md-optgroup>
+			    </md-select>
+			    <p class="md-caption">{{ favoriteTopping ? 'Your favorite topping is ' + favoriteTopping : 'Please select a topping'}}</p>
+			  </div>
+			</div>			
+		</div>
+	</section>
+
+	<section layout="row" layout-wrap layout-padding style="text-align: center">
+		<div layout="column" layout-align="center center" style="padding:40px">
+		  <p>Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:</p>
+		  <div layout="column" layout-align="center center" style="height: 100px;">
+		    <md-select ng-model="user" md-on-open="loadUsers()" style="min-width: 200px;">
+		      <md-select-label>{{ user ? user.name : 'Assign to user' }}</md-select-label>
+		      <md-option ng-value="user" ng-repeat="user in users">{{user.name}}</md-option>
+		    </md-select>
+		    <p class="md-caption">You have assigned the task to: {{ user ? user.name : 'No one yet' }}</p>
+		  </div>
+		</div>
+	</section>
+
+	<section layout="row" layout-wrap layout-padding layout-align="center center" style="text-align:center">
+
+		  <form name="myForm">
+		    <p>Note that invalid styling only applies if invalid and dirty</p>
+		    <md-input-container>
+		      <md-select name="myModel" placeholder="Pick" ng-model="myModel" required>
+		        <md-option value="1">One</md-option>
+		        <md-option value="2">Two</md-option>
+		      </md-select>
+		      <div class="errors" ng-messages="myForm.myModel.$error" >
+		        <div ng-message="required">Required</div>
+		      </div>
+		    </md-input-container>
+		    <div layout="row" layout-align="center center">
+		      <md-button ng-click="clearValue()" class="mx-button warn-btn" style="margin-right: 20px;">Clear</md-button>
+		      <md-button ng-click="save()" ng-disabled="myForm.$invalid" class="mx-button primary-btn" layout layout-align="center end">Save</md-button>
+		    </div>
+		  </form>
+	</section>
+</md-content>

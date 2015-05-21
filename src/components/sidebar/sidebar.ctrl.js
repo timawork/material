@@ -29,6 +29,10 @@
             icon: 'truck',
             name: 'Chips',
             link: '#/chips'
+        }, {
+            icon: 'truck',
+            name: 'select and dropdown',
+            link: '#/select'
         }];
     };
 })();

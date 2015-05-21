@@ -50,6 +50,11 @@
                     templateUrl: 'app/chips/chips.html',
                     controller: 'chipsesCtrl',
                     controllerAs: 'chips'
+                }).state('select', {
+                    url: '/select',
+                    templateUrl: 'app/select-dropdown/select.html',
+                    controller: 'selectsCtrl',
+                    controllerAs: 'select'
                 });
 
             $urlRouterProvider.otherwise('/');

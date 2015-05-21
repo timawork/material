@@ -390,6 +390,20 @@ border-color: rgba(0,0,0,0.26)!important;
 }
 
 
+//select
+md-option[selected] {
+	color: $primary;
+}
+
+.md-select-label{
+	border-bottom-color: $primary;
+}
+
+.ng-invalid.ng-dirty .md-select-label {
+	color: #000;
+}
+
+
 /*====MEDIA====*/
 
 @media only screen and (max-width: 1000px) {
@@ -402,4 +416,5 @@ border-color: rgba(0,0,0,0.26)!important;
  .chipsdemoContactChips .contact-item {
  	width: 100%;
  }	
+
 }
