@@ -31,8 +31,8 @@
             link: '#/chips'
         }, {
             icon: 'truck',
-            name: 'select and dropdown',
-            link: '#/select'
+            name: 'modals',
+            link: '#/modals'
         }];
     };
 })();

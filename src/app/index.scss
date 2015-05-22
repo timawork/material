@@ -386,7 +386,7 @@ border-color: rgba(0,0,0,0.26)!important;
 
 //chips all in primary color
 .md-chip.md-focused {
-	background: $primary;
+	background: $success;
 }
 
 
@@ -401,6 +401,19 @@ md-option[selected] {
 
 .ng-invalid.ng-dirty .md-select-label {
 	color: #000;
+}
+
+.a.md-button.md-default-theme.md-primary, 
+.md-button.md-default-theme.md-primary {
+	color: $primary;
+}
+
+// ЗАГОЛОВКИ
+
+.md-subheader {
+	color: $text-clr;
+	font-size: 18px;
+	font-weight: 700;
 }
 
 

@@ -55,6 +55,11 @@
                     templateUrl: 'app/select-dropdown/select.html',
                     controller: 'selectsCtrl',
                     controllerAs: 'select'
+                }).state('modals', {
+                    url: '/modals',
+                    templateUrl: 'app/modals/modals.html',
+                    controller: 'modalsCtrl',
+                    controllerAs: 'modals'
                 });
 
             $urlRouterProvider.otherwise('/');
