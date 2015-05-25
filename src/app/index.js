@@ -70,6 +70,11 @@
                     templateUrl: 'app/deviders/devider.html',
                     controller: 'devidersCtrl',
                     controllerAs: 'devider'
+                }).state('cards', {
+                    url: '/cards',
+                    templateUrl: 'app/cards/cards.html',
+                    controller: 'CardsCtrl',
+                    controllerAs: 'cards'
                 });
 
             $urlRouterProvider.otherwise('/');
