@@ -22,6 +22,61 @@
 			  useWrapMode : true,
 			  theme:'merbivore',
 			  mode: 'html'}">
+&#x3C;!--3 line item--&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-list-item class=&#x22;md-3-line&#x22; ng-repeat=&#x22;item in todos&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;img ng-src=&#x22;{{item.face}}?{{$index}}&#x22; class=&#x22;md-avatar&#x22; alt=&#x22;{{item.who}}&#x22; /&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;div class=&#x22;md-list-item-text&#x22;&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;h3&#x3E;{{ item.who }}&#x3C;/h3&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;h4&#x3E;{{ item.what }}&#x3C;/h4&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;p&#x3E;{{ item.notes }}&#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-list-item&#x3E;
+
+&#x3C;!--2 line item--&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-list-item class=&#x22;md-2-line&#x22;&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;img ng-src=&#x22;{{todos[0].face}}?20&#x22; class=&#x22;md-avatar&#x22; alt=&#x22;{{todos[0].who}}&#x22; /&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;div class=&#x22;md-list-item-text&#x22;&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;h3&#x3E;{{ todos[0].who }}&#x3C;/h3&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;p&#x3E;Secondary text&#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-list-item&#x3E;
+
+&#x3C;!--md-offset class--&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-list-item class=&#x22;md-2-line&#x22; ng-repeat=&#x22;phone in phones&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-icon class=&#x22;fa fa-home&#x22; ng-if=&#x22;$index === 0&#x22; style=&#x22;font-size: 30px; margin-left: 7px; margin-right: 25px&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;div class=&#x22;md-list-item-text&#x22; ng-class=&#x22;{&#x27;md-offset&#x27;: $index != 0 }&#x22;&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;h3&#x3E; {{ phone.number }} &#x3C;/h3&#x3E;
+&#x9;&#x9;&#x9;          &#x3C;p&#x3E; {{ phone.type }} &#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-list-item&#x3E;
+
+&#x3C;!--list with checkboxes--&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;md-list-item ng-repeat=&#x22;topping in toppings&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;p&#x3E; {{ topping.name }} &#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-checkbox class=&#x22;success-checkbox&#x22; ng-model=&#x22;topping.wanted&#x22;&#x3E;&#x3C;/md-checkbox&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/md-list-item&#x3E;
+
+&#x3C;!--list with switches--&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;md-list-item ng-click=&#x22;navigateTo(setting.extraScreen, $event)&#x22; ng-repeat=&#x22;setting in settings&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-icon class=&#x22;{{setting.icon}}&#x22; style=&#x22;font-size: 20px; margin-top: 20px; margin-left: 10px; margin-right: 18px;&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;p&#x3E; {{ setting.name }} &#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-switch class=&#x22;warn-switch&#x22; ng-model=&#x22;setting.enabled&#x22;&#x3E;&#x3C;/md-switch&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/md-list-item&#x3E;
+
+&#x3C;!--list with secondary action--&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;md-list-item ng-repeat=&#x22;message in messages&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-checkbox ng-model=&#x22;message.selected&#x22; class=&#x22;primary-checkbox&#x22;&#x3E;&#x3C;/md-checkbox&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;p&#x3E;{{message.title}}&#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-icon class=&#x22;md-secondary&#x22; ng-click=&#x22;doSecondaryAction($event)&#x22; aria-label=&#x22;Chat&#x22; md-svg-icon=&#x22;communication:message&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/md-list-item&#x3E;
+
+&#x3C;!--list with avatars icon and modal--&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;md-list-item ng-repeat=&#x22;person in people&#x22; ng-click=&#x22;goToPerson(person.name, $event)&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;img alt=&#x22;{{ person.name }}&#x22; ng-src=&#x22;{{ person.img }}&#x22; class=&#x22;md-avatar&#x22; /&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;p&#x3E;{{ person.name }}&#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-icon md-svg-icon=&#x22;communication:messenger&#x22; ng-click=&#x22;doSecondaryAction($event)&#x22; aria-label=&#x22;Open Chat&#x22; class=&#x22;fa fa-comments-o&#x22; ng-class=&#x22;{&#x27;success-clr&#x27;: person.newMessage}&#x22; style=&#x22;font-size: 20px;&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/md-list-item&#x3E;
+
 
 			</div>	
 		</md-tab>
@@ -42,6 +97,122 @@
 			  theme:'merbivore',
 			  mode: 'javascript'}">
   
+(function() { 
+    'use strict';
+
+    angular.module('fm')
+        .controller('listsCtrl', selectCtrl);
+
+    selectCtrl.$inject = ['$scope', '$mdDialog' ]
+
+
+    function selectCtrl($scope, $mdDialog) {
+        var vm = this;
+
+
+
+	   var imagePath = 'assets/images/60.jpeg';
+	    $scope.phones = [
+	      { type: 'Home', number: '(555) 251-1234' },
+	      { type: 'Cell', number: '(555) 786-9841' },
+	    ];
+	    $scope.todos = [
+	      {
+	        face : imagePath,
+	        what: 'Brunch this weekend?',
+	        who: 'Min Li Chan',
+	        when: '3:08PM',
+	        notes: " I'll be in your neighborhood doing errands"
+	      },
+	      {
+	        face : imagePath,
+	        what: 'Brunch this weekend?',
+	        who: 'Min Li Chan',
+	        when: '3:08PM',
+	        notes: " I'll be in your neighborhood doing errands"
+	      },
+	      {
+	        face : imagePath,
+	        what: 'Brunch this weekend?',
+	        who: 'Min Li Chan',
+	        when: '3:08PM',
+	        notes: " I'll be in your neighborhood doing errands"
+	      },
+	      {
+	        face : imagePath,
+	        what: 'Brunch this weekend?',
+	        who: 'Min Li Chan',
+	        when: '3:08PM',
+	        notes: " I'll be in your neighborhood doing errands"
+	      },
+	      {
+	        face : imagePath,
+	        what: 'Brunch this weekend?',
+	        who: 'Min Li Chan',
+	        when: '3:08PM',
+	        notes: " I'll be in your neighborhood doing errands"
+	      },
+	    ];
+
+
+	    //lists with checkboxes
+
+	      $scope.toppings = [
+		    { name: 'Pepperoni', wanted: true },
+		    { name: 'Sausage', wanted: false },
+		    { name: 'Black Olives', wanted: true },
+		    { name: 'Green Peppers', wanted: false }
+		  ];
+		  $scope.settings = [
+		    { name: 'Wi-Fi', extraScreen: 'Wi-fi menu', icon: 'fa fa-wifi', enabled: true },
+		    { name: 'Bluetooth', extraScreen: 'Bluetooth menu', icon: 'fa fa-forumbee', enabled: false },
+		  ];
+		  $scope.messages = [
+		    {id: 1, title: "Message A", selected: false},
+		    {id: 2, title: "Message B", selected: true},
+		    {id: 3, title: "Message C", selected: true},
+		  ];
+		  $scope.people = [
+		    { name: 'Janet Perkins', img: 'assets/images/100-1.jpeg', newMessage: true },
+		    { name: 'Mary Johnson', img: 'assets/images/100-1.jpeg', newMessage: false },
+		    { name: 'Peter Carlsson', img: 'assets/images/100-1.jpeg', newMessage: false }
+		  ];
+		  $scope.goToPerson = function(person, event) {
+		    $mdDialog.show(
+		      $mdDialog.alert()
+		        .title('Navigating')
+		        .content('Inspect ' + person)
+		        .ariaLabel('Person inspect demo')
+		        .ok('Neat!')
+		        .targetEvent(event)
+		    );
+		  };
+		  $scope.navigateTo = function(to, event) {
+		    $mdDialog.show(
+		      $mdDialog.alert()
+		        .title('Navigating')
+		        .content('Imagine being taken to ' + to)
+		        .ariaLabel('Navigation demo')
+		        .ok('Neat!')
+		        .targetEvent(event)
+		    );
+		  };
+		  $scope.doSecondaryAction = function(event) {
+		    $mdDialog.show(
+		      $mdDialog.alert()
+		        .title('Secondary Action')
+		        .content('Secondary actions can be used for one click actions')
+		        .ariaLabel('Secondary click demo')
+		        .ok('Neat!')
+		        .targetEvent(event)
+		    );
+		  };
+
+
+
+};
+
+})();
 
     			</div>	
 		</md-tab>
