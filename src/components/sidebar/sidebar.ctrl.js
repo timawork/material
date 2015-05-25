@@ -35,6 +35,10 @@
             link: '#/modals'
         }, {
             icon: 'truck',
+            name: 'Select, dropdown',
+            link: '#/select'
+        }, {
+            icon: 'truck',
             name: 'Lists',
             link: '#/list'
         }];
