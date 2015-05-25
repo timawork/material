@@ -74,7 +74,12 @@
                     url: '/cards',
                     templateUrl: 'app/cards/cards.html',
                     controller: 'CardsCtrl',
-                    controllerAs: 'cards'
+                    controllerAs: 'cards'                
+                }).state('toolbars', {
+                    url: '/toolbars',
+                    templateUrl: 'app/toolbars/toolbar.html',
+                    controller: 'ToolbarCtrl',
+                    controllerAs: 'toolbars'
                 });
 
             $urlRouterProvider.otherwise('/');

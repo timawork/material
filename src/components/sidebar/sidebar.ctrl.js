@@ -49,6 +49,10 @@
             icon: 'truck',
             name: 'Cards',
             link: '#/cards'
+        }, {
+            icon: 'truck',
+            name: 'Toolbars',
+            link: '#/toolbars'
         }];
     };
 })();
