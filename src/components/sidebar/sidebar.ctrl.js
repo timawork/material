@@ -31,8 +31,12 @@
             link: '#/chips'
         }, {
             icon: 'truck',
-            name: 'modals',
+            name: 'modals, dialog',
             link: '#/modals'
+        }, {
+            icon: 'truck',
+            name: 'Lists',
+            link: '#/list'
         }];
     };
 })();

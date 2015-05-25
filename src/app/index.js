@@ -60,6 +60,11 @@
                     templateUrl: 'app/modals/modals.html',
                     controller: 'modalsCtrl',
                     controllerAs: 'modals'
+                 }).state('list', {
+                    url: '/list',
+                    templateUrl: 'app/list/list.html',
+                    controller: 'listsCtrl',
+                    controllerAs: 'list'
                 });
 
             $urlRouterProvider.otherwise('/');

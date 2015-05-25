@@ -1,0 +1,138 @@
+<md-toolbar class="md-whiteframe-z1">
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">LISTS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+		
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+  
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout-sm="column" layout="row" layout-wrap layout-padding style="text-align: left">
+   		<div flex>
+			 <md-content class="nobackground">
+			    <md-list>
+			      <md-subheader class="md-no-sticky nobackground">3 line item</md-subheader>
+			      <md-list-item class="md-3-line" ng-repeat="item in todos">
+			        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" />
+			        <div class="md-list-item-text">
+			          <h3>{{ item.who }}</h3>
+			          <h4>{{ item.what }}</h4>
+			          <p>{{ item.notes }}</p>
+			        </div>
+			      </md-list-item>
+			      <md-divider ></md-divider>
+			      <md-subheader class="md-no-sticky nobackground">2 line item</md-subheader>
+			      <md-list-item class="md-2-line">
+			      <img ng-src="{{todos[0].face}}?20" class="md-avatar" alt="{{todos[0].who}}" />
+			        <div class="md-list-item-text">
+			          <h3>{{ todos[0].who }}</h3>
+			          <p>Secondary text</p>
+			        </div>
+			      </md-list-item>
+			      <md-divider ></md-divider>
+			      <md-subheader class="md-no-sticky nobackground">3 line item, long paragraph (see on mobile)</md-subheader>
+			      <md-list-item class="md-3-line">
+			        <img ng-src="{{todos[0].face}}?25" class="md-avatar" alt="{{todos[0].who}}" />
+			        <div class="md-list-item-text">
+			          <h3>{{ todos[0].who }}</h3>
+			          <p>Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam.</p>
+			        </div>
+			      </md-list-item>
+			      <md-divider ></md-divider>
+			      <md-subheader class="md-no-sticky nobackground">md-offset class</md-subheader>
+			      <md-list-item class="md-2-line" ng-repeat="phone in phones">
+			        <md-icon class="fa fa-home" ng-if="$index === 0" style="font-size: 30px; margin-left: 7px; margin-right: 25px"></md-icon>
+			        <div class="md-list-item-text" ng-class="{'md-offset': $index != 0 }">
+			          <h3> {{ phone.number }} </h3>
+			          <p> {{ phone.type }} </p>
+			        </div>
+			      </md-list-item>
+			    </md-list>
+			  </md-content>
+		  </div>
+
+		  <div flex>
+			<md-list>
+
+			  <md-subheader class="md-no-sticky nobackground">Single Action Checkboxes</md-subheader>
+			  <md-list-item ng-repeat="topping in toppings">
+			    <p> {{ topping.name }} </p>
+			    <md-checkbox class="success-checkbox" ng-model="topping.wanted"></md-checkbox>
+			  </md-list-item>
+
+			  <md-divider></md-divider>
+
+			  <md-subheader class="md-no-sticky nobackground">Clickable Items with Secondary Controls</md-subheader>
+
+			  <md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
+			    <md-icon class="{{setting.icon}}" style="font-size: 20px; margin-top: 20px; margin-left: 10px; margin-right: 18px;"></md-icon>
+			    <p> {{ setting.name }} </p>
+			    <md-switch class="warn-switch" ng-model="setting.enabled"></md-switch>
+			  </md-list-item>
+
+			  <md-list-item ng-click="navigateTo('data usage', $event)">
+			    <md-icon class="fa fa-unlock" style="font-size: 20px; margin-top: 20px; margin-left: 10px; margin-right: 18px;"></md-icon>
+			    <p>Data Usage</p>
+			  </md-list-item>
+
+			  <md-divider></md-divider>
+
+			  <md-subheader class="md-no-sticky nobackground">Checkbox with Secondary Action</md-subheader>
+			  <md-list-item ng-repeat="message in messages">
+			    <md-checkbox ng-model="message.selected" class="primary-checkbox"></md-checkbox>
+			    <p>{{message.title}}</p>
+			    <md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" md-svg-icon="communication:message"></md-icon>
+			  </md-list-item>
+			  <md-divider></md-divider>
+
+			  <md-subheader class="md-no-sticky nobackground">Avatar with Secondary Action Icon</md-subheader>
+			  <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
+			    <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+			    <p>{{ person.name }}</p>
+			    <md-icon md-svg-icon="communication:messenger" ng-click="doSecondaryAction($event)" aria-label="Open Chat" class="fa fa-comments-o" ng-class="{'success-clr': person.newMessage}" style="font-size: 20px;"></md-icon>
+			  </md-list-item>
+			</md-list>
+		  </div>
+	</section>
+</md-content>
