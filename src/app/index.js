@@ -65,6 +65,11 @@
                     templateUrl: 'app/list/list.html',
                     controller: 'listsCtrl',
                     controllerAs: 'list'
+                }).state('devider', {
+                    url: '/devider',
+                    templateUrl: 'app/deviders/devider.html',
+                    controller: 'devidersCtrl',
+                    controllerAs: 'devider'
                 });
 
             $urlRouterProvider.otherwise('/');

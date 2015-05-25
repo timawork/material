@@ -41,6 +41,10 @@
             icon: 'truck',
             name: 'Lists',
             link: '#/list'
+        }, {
+            icon: 'truck',
+            name: 'Devider',
+            link: '#/devider'
         }];
     };
 })();
