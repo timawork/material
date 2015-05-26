@@ -100,6 +100,11 @@
                     templateUrl: 'app/subheader/subheader.html',
                     controller: 'SubheadersCtrl',
                     controllerAs: 'subheader'
+                }).state('toolbar', {
+                    url: '/toolbar',
+                    templateUrl: 'app/toolbars/toolbar.html',
+                    controller: 'ToolBarsCtrl',
+                    controllerAs: 'toolbar'
                 });
 
             $urlRouterProvider.otherwise('/');

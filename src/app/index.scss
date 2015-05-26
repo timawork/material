@@ -449,6 +449,15 @@ md-option[selected] {
 .simple-toolbar {
 	background: $simple;
 	color: $text-clr;
+
+	md-icon {
+		color: $text-clr;
+	}
+}
+
+md-toolbar.md-default-theme md-icon {
+	font-size: 18px;
+	padding-top: 5px;
 }
 
 //tabs
