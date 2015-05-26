@@ -76,10 +76,10 @@
                     controller: 'CardsCtrl',
                     controllerAs: 'cards'                
                 }).state('toolbars', {
-                    url: '/toolbars',
-                    templateUrl: 'app/toolbars/toolbar.html',
-                    controller: 'ToolbarCtrl',
-                    controllerAs: 'toolbars'                
+                    url: '/scroll-content',
+                    templateUrl: 'app/scroll-content/scroll-content.html',
+                    controller: 'ScrollContCtrl',
+                    controllerAs: 'scroll-content'                
                 }).state('tabs', {
                     url: '/tabs',
                     templateUrl: 'app/tabs/tabs.html',

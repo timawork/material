@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('fm')
-        .controller('ToolbarCtrl', toolbarsCtrl);
+        .controller('ScrollContCtrl', toolbarsCtrl);
 
     toolbarsCtrl.$inject = ['$scope']
 
