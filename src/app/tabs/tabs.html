@@ -1,0 +1,339 @@
+<md-toolbar class="md-whiteframe-z1">  
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">TABS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+&#x3C;!--TABS #1--&#x3E;
+&#x9;&#x9;  &#x3C;md-content class=&#x22;md-padding&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;md-tabs md-dynamic-height md-border-bottom class=&#x22;warn-tabs&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-tab label=&#x22;one&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-content class=&#x22;md-padding&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;h1 class=&#x22;md-display-2&#x22;&#x3E;Tab One&#x3C;/h1&#x3E;
+&#x9;&#x9;          &#x3C;p&#x3E;Lorem ipsum dolor sit amet&#x3C;/p&#x3E;
+&#x9;&#x9;        &#x3C;/md-content&#x3E;
+&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;      &#x3C;md-tab label=&#x22;two&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-content class=&#x22;md-padding&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;h1 class=&#x22;md-display-2&#x22;&#x3E;Tab Two&#x3C;/h1&#x3E;
+&#x9;&#x9;          &#x3C;p&#x3E; Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate.&#x3C;/p&#x3E;
+&#x9;&#x9;        &#x3C;/md-content&#x3E;
+&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;      &#x3C;md-tab label=&#x22;three&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-content class=&#x22;md-padding&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;h1 class=&#x22;md-display-2&#x22;&#x3E;Tab Three&#x3C;/h1&#x3E;
+&#x9;&#x9;          &#x3C;p&#x3E;Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. &#x3C;/p&#x3E;
+&#x9;&#x9;        &#x3C;/md-content&#x3E;
+&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;    &#x3C;/md-tabs&#x3E;
+&#x9;&#x9;  &#x3C;/md-content&#x3E;
+
+
+&#x3C;!--TABS #2--&#x3E;
+&#x3C;md-content class=&#x22;md-padding&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;md-tabs md-selected=&#x22;selectedIndex&#x22; md-border-bottom class=&#x22;warn-tabs&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-tab ng-repeat=&#x22;tab in tabs.tabs&#x22;
+&#x9;&#x9;              ng-disabled=&#x22;tab.disabled&#x22;
+&#x9;&#x9;              label=&#x22;{{tab.title}}&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;div class=&#x22;demo-tab tab{{$index%4}}&#x22; style=&#x22;padding: 25px; text-align: center;&#x22;&#x3E;
+&#x9;&#x9;          &#x3C;div ng-bind=&#x22;tab.content&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x9;          &#x3C;br/&#x3E;
+&#x9;&#x9;          &#x3C;md-button class=&#x22;warn-btn mx-button md-raised&#x22; ng-click=&#x22;removeTab( tab )&#x22; ng-disabled=&#x22;tabs.length &#x3C;= 1&#x22;&#x3E;Remove Tab&#x3C;/md-button&#x3E;
+&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;    &#x3C;/md-tabs&#x3E;
+&#x9;&#x9;  &#x3C;/md-content&#x3E;
+&#x9;&#x9;  &#x3C;form ng-submit=&#x22;addTab(tTitle,tContent)&#x22; layout=&#x22;column&#x22; class=&#x22;md-padding&#x22; style=&#x22;padding-top: 0;&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;div layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center center&#x22; layout-padding&#x3E;
+&#x9;&#x9;      &#x3C;div flex style=&#x22;position: relative;&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;h2 class=&#x22;md-subhead&#x22; style=&#x22;position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;&#x22;&#x3E;Add a new Tab:&#x3C;/h2&#x3E;
+&#x9;&#x9;      &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;div flex&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-input-container&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;label for=&#x22;label&#x22;&#x3E;Label&#x3C;/label&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;input type=&#x22;text&#x22; id=&#x22;label&#x22; ng-model=&#x22;tTitle&#x22;&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-input-container&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;label for=&#x22;content&#x22;&#x3E;Content&#x3C;/label&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;input type=&#x22;text&#x22; id=&#x22;content&#x22; ng-model=&#x22;tContent&#x22;&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-button 
+&#x9;&#x9;&#x9;      &#x9;class=&#x22;add-tab mx-button md-raised&#x22; 
+&#x9;&#x9;&#x9;      &#x9;ng-disabled=&#x22;!tTitle || !tContent&#x22; 
+&#x9;&#x9;&#x9;      &#x9;type=&#x22;submit&#x22; 
+&#x9;&#x9;&#x9;      &#x9;style=&#x22;margin-right: 0;&#x22;
+&#x9;&#x9;&#x9;      &#x9;ng-class=&#x22;{&#x27;success-btn&#x27;:tTitle &#x26;&#x26; tContent}&#x22;&#x3E;
+&#x9;&#x9;&#x9;      &#x9;&#x9;Add Tab
+&#x9;&#x9;&#x9;      &#x9;&#x3C;/md-button&#x3E;
+&#x9;&#x9;      &#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;    &#x3C;/div&#x3E;
+&#x9;&#x9;  &#x3C;/form&#x3E;
+
+
+&#x3C;!--TABS #3--&#x3E;
+&#x3C;md-content class=&#x22;md-padding&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-tabs md-border-bottom class=&#x22;warn-tabs&#x22; md-selected=&#x22;data.selectedIndex&#x22; md-align-tabs=&#x22;{{data.bottom ? &#x27;bottom&#x27; : &#x27;top&#x27;}}&#x22;&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-tab id=&#x22;tab1&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-tab-label&#x3E;Item One&#x3C;/md-tab-label&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-tab-body&#x3E;
+&#x9;&#x9;&#x9;        &#x9;&#x3C;div style=&#x22;padding: 25px;&#x22;&#x3E;
+&#x9;&#x9;&#x9;&#x9;          View for Item #1 &#x3C;br/&#x3E;
+&#x9;&#x9;&#x9;&#x9;          data.selectedIndex = 0;
+&#x9;&#x9;&#x9;          &#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/md-tab-body&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-tab id=&#x22;tab2&#x22; ng-disabled=&#x22;data.secondLocked&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-tab-label&#x3E;{{data.secondLabel}}&#x3C;/md-tab-label&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-tab-body&#x3E;
+&#x9;&#x9;&#x9;        &#x9;&#x3C;div style=&#x22;padding: 25px;&#x22;&#x3E;
+&#x9;&#x9;&#x9;&#x9;          View for Item #2 &#x3C;br/&#x3E;
+&#x9;&#x9;&#x9;&#x9;          data.selectedIndex = 1;
+&#x9;&#x9;&#x9;          &#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/md-tab-body&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-tab id=&#x22;tab3&#x22;&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-tab-label&#x3E;Item Three&#x3C;/md-tab-label&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-tab-body&#x3E;
+&#x9;&#x9;&#x9;        &#x9;&#x3C;div style=&#x22;padding: 25px;&#x22;&#x3E;
+&#x9;&#x9;&#x9;&#x9;          View for Item #3 &#x3C;br/&#x3E;
+&#x9;&#x9;&#x9;&#x9;          data.selectedIndex = 2;
+&#x9;&#x9;&#x9;          &#x9;&#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/md-tab-body&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-tab&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;/md-tabs&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/md-content&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;div class=&#x22;md-padding&#x22; layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;left center&#x22;
+&#x9;&#x9;&#x9;       style=&#x22;padding-top: 0;&#x22;&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-checkbox class=&#x22;success-checkbox&#x22; ng-model=&#x22;data.secondLocked&#x22; aria-label=&#x22;Disable item two?&#x22; style=&#x22;margin: 5px;&#x22;&#x3E;
+&#x9;&#x9;&#x9;      Disable item two?
+&#x9;&#x9;&#x9;    &#x3C;/md-checkbox&#x3E;
+&#x9;&#x9;&#x9;    &#x3C;md-checkbox class=&#x22;success-checkbox&#x22; ng-model=&#x22;data.bottom&#x22; aria-label=&#x22;Align tabs to bottom?&#x22; style=&#x22;margin: 5px;&#x22;&#x3E;
+&#x9;&#x9;&#x9;      Align tabs to bottom?
+&#x9;&#x9;&#x9;    &#x3C;/md-checkbox&#x3E;
+&#x9;&#x9;&#x9;  &#x3C;/div&#x3E;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+(function() {  
+    'use strict';
+
+    angular.module('fm')
+        .controller('TabsCtrl', tabsCtrl);
+
+    tabsCtrl.$inject = ['$scope', '$log']
+
+    function tabsCtrl($scope, $log) {
+        var vm = this;
+
+
+	//ТАБ №2
+ 	var tabs = [
+          { title: 'One', content: "Tabs will become paginated if there isn't enough room for them."},
+          { title: 'Two', content: "You can swipe left and right on a mobile device to change tabs."},
+          { title: 'Three', content: "You can bind the selected tab via the selected attribute on the md-tabs element."},
+          { title: 'Four', content: "If you set the selected tab binding to -1, it will leave no tab selected."},
+          { title: 'Five', content: "If you remove a tab, it will try to select a new one."},
+          { title: 'Six', content: "There's an ink bar that follows the selected tab, you can turn it off if you want."},
+          { title: 'Seven', content: "If you set ng-disabled on a tab, it becomes unselectable. If the currently selected tab becomes disabled, it will try to select the next tab."},
+          { title: 'Eight', content: "If you look at the source, you're using tabs to look at a demo for tabs. Recursion!"},
+          { title: 'Nine', content: "If you set md-theme=\"green\" on the md-tabs element, you'll get green tabs."},
+          { title: 'Ten', content: "If you're still reading this, you should just go check out the API docs for tabs!"}
+        ],
+        selected = null,
+        previous = null;
+	    vm.tabs = tabs;
+	    $scope.selectedIndex = 2;
+	    $scope.$watch('selectedIndex', function(current, old){
+	      previous = selected;
+	      selected = tabs[current];
+	      if ( old && (old != current)) $log.debug('Goodbye ' + previous.title + '!');
+	      if ( current )                $log.debug('Hello ' + selected.title + '!');
+	    });
+	    $scope.addTab = function (title, view) {
+	      view = view || title + " Content View";
+	      tabs.push({ title: title, content: view, disabled: false});
+	    };
+	    $scope.removeTab = function (tab) {
+	      var index = tabs.indexOf(tab);
+	      tabs.splice(index, 1);
+	    };
+
+
+    	//ТАБ №3
+	    $scope.data = {
+	      selectedIndex: 0,
+	      secondLocked:  true,
+	      secondLabel:   "Item Two",
+	      bottom:        false
+	    };
+	    $scope.next = function() {
+	      $scope.data.selectedIndex = Math.min($scope.data.selectedIndex + 1, 2) ;
+	    };
+	    $scope.previous = function() {
+	      $scope.data.selectedIndex = Math.max($scope.data.selectedIndex - 1, 0);
+	    };
+
+
+
+
+    };
+
+})();
+       
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+   		<div flex>
+
+		  <md-content class="md-padding">
+		    <md-tabs md-dynamic-height md-border-bottom class="warn-tabs">
+		      <md-tab label="one">
+		        <md-content class="md-padding">
+		          <h1 class="md-display-2">Tab One</h1>
+		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+		        </md-content>
+		      </md-tab>
+		      <md-tab label="two">
+		        <md-content class="md-padding">
+		          <h1 class="md-display-2">Tab Two</h1>
+		          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+		          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+		          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+		        </md-content>
+		      </md-tab>
+		      <md-tab label="three">
+		        <md-content class="md-padding">
+		          <h1 class="md-display-2">Tab Three</h1>
+		          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+		        </md-content>
+		      </md-tab>
+		    </md-tabs>
+		  </md-content>
+			
+	  	</div>
+	</section>
+
+	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+		  <md-content class="md-padding">
+		    <md-tabs md-selected="selectedIndex" md-border-bottom class="warn-tabs">
+		      <md-tab ng-repeat="tab in tabs.tabs"
+		              ng-disabled="tab.disabled"
+		              label="{{tab.title}}">
+		        <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+		          <div ng-bind="tab.content"></div>
+		          <br/>
+		          <md-button class="warn-btn mx-button md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
+		        </div>
+		      </md-tab>
+		    </md-tabs>
+		  </md-content>
+		  <form ng-submit="addTab(tTitle,tContent)" layout="column" class="md-padding" style="padding-top: 0;">
+		    <div layout="row" layout-sm="column" layout-align="center center" layout-padding>
+		      <div flex style="position: relative;">
+		        <h2 class="md-subhead" style="position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;">Add a new Tab:</h2>
+		      </div>
+		      <div flex>
+			      <md-input-container>
+			        <label for="label">Label</label>
+			        <input type="text" id="label" ng-model="tTitle">
+			      </md-input-container>
+			      <md-input-container>
+			        <label for="content">Content</label>
+			        <input type="text" id="content" ng-model="tContent">
+			      </md-input-container>
+			      <md-button 
+			      	class="add-tab mx-button md-raised" 
+			      	ng-disabled="!tTitle || !tContent" 
+			      	type="submit" 
+			      	style="margin-right: 0;"
+			      	ng-class="{'success-btn':tTitle && tContent}">
+			      		Add Tab
+			      	</md-button>
+		      	</div>
+		    </div>
+		  </form>
+	  </div>
+	</section>
+
+	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+			 <md-content class="md-padding">
+			    <md-tabs md-border-bottom class="warn-tabs" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+			      <md-tab id="tab1">
+			        <md-tab-label>Item One</md-tab-label>
+			        <md-tab-body>
+			        	<div style="padding: 25px;">
+				          View for Item #1 <br/>
+				          data.selectedIndex = 0;
+			          	</div>
+			        </md-tab-body>
+			      </md-tab>
+			      <md-tab id="tab2" ng-disabled="data.secondLocked">
+			        <md-tab-label>{{data.secondLabel}}</md-tab-label>
+			        <md-tab-body>
+			        	<div style="padding: 25px;">
+				          View for Item #2 <br/>
+				          data.selectedIndex = 1;
+			          	</div>
+			        </md-tab-body>
+			      </md-tab>
+			      <md-tab id="tab3">
+			        <md-tab-label>Item Three</md-tab-label>
+			        <md-tab-body>
+			        	<div style="padding: 25px;">
+				          View for Item #3 <br/>
+				          data.selectedIndex = 2;
+			          	</div>
+			        </md-tab-body>
+			      </md-tab>
+			    </md-tabs>
+			  </md-content>
+			  <div class="md-padding" layout="row" layout-sm="column" layout-align="left center"
+			       style="padding-top: 0;">
+			    <md-checkbox class="success-checkbox" ng-model="data.secondLocked" aria-label="Disable item two?" style="margin: 5px;">
+			      Disable item two?
+			    </md-checkbox>
+			    <md-checkbox class="success-checkbox" ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">
+			      Align tabs to bottom?
+			    </md-checkbox>
+			  </div>
+		</div>
+	</section>
+</md-content>

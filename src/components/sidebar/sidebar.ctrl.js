@@ -53,6 +53,10 @@
             icon: 'truck',
             name: 'Toolbars',
             link: '#/toolbars'
+        }, {
+            icon: 'truck',
+            name: 'Tabs',
+            link: '#/tabs'
         }];
     };
 })();

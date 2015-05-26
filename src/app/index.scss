@@ -447,6 +447,46 @@ md-option[selected] {
 	color: $text-clr;
 }
 
+//tabs
+
+.primary-tabs md-ink-bar{
+	background: $primary;
+}
+
+.primary-tabs .md-tab.md-active {
+	color: $primary;
+}
+
+.primary-tabs .md-focused{
+	background-color:$primary
+}
+
+.warn-tabs md-ink-bar{
+	background: $warn;
+}
+
+.warn-tabs .md-tab.md-active {
+	color: $warn;
+}
+
+.warn-tabs .md-focused{
+	background-color:$warn
+}
+
+.success-tabs md-ink-bar{
+	background: $success
+}
+
+.success-tabs .md-tab.md-active {
+	color: $success
+}
+
+.success-tabs .md-focused{
+	background-color:$success
+}
+
+
+
 
 /*====MEDIA====*/
 
