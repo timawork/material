@@ -1,0 +1,233 @@
+<md-toolbar class="md-whiteframe-z1">  
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">SUBHEADER</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+&#x3C;!--fixed subheaders--&#x3E;
+&#x3C;md-subheader class=&#x22;primary-toolbar&#x22; style=&#x22;text-align: left;&#x22;&#x3E;Unread Messages&#x3C;/md-subheader&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;md-list layout-padding&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;md-list-item class=&#x22;md-3-line&#x22; ng-repeat=&#x22;message in subheader.messages&#x22;&#x3E;
+&#x9;&#x9;&#x9;            &#x3C;img ng-src=&#x22;{{message.face}}&#x22; class=&#x22;md-avatar&#x22; alt=&#x22;{{message.who}}&#x22;&#x3E;
+&#x9;&#x9;&#x9;            &#x3C;div class=&#x22;md-list-item-text&#x22;&#x3E;
+&#x9;&#x9;&#x9;              &#x3C;h3&#x3E;{{message.what}}&#x3C;/h3&#x3E;
+&#x9;&#x9;&#x9;              &#x3C;h4&#x3E;{{message.who}}&#x3C;/h4&#x3E;
+&#x9;&#x9;&#x9;              &#x3C;p&#x3E;
+&#x9;&#x9;&#x9;                {{message.notes}}
+&#x9;&#x9;&#x9;              &#x3C;/p&#x3E;
+&#x9;&#x9;&#x9;            &#x3C;/div&#x3E;
+&#x9;&#x9;&#x9;            &#x3C;md-divider ng-if=&#x22;!$last&#x22;&#x3E;&#x3C;/md-divider&#x3E;
+&#x9;&#x9;&#x9;        &#x3C;/md-list-item&#x3E;
+&#x9;&#x9;&#x9;      &#x3C;/md-list&#x3E;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+(function() {  
+    'use strict';
+
+    angular.module('fm')
+        .controller('SubheadersCtrl', subheadCtrl);
+
+    subheadCtrl.$inject = ['$scope']
+
+    function subheadCtrl($scope) {
+        var vm = this;
+
+		var imagePath = 'assets/images/60.jpeg';
+	
+		vm.messages = [
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		      {
+		        face : imagePath,
+		        what: 'Brunch this weekend?',
+		        who: 'Min Li Chan',
+		        when: '3:08PM',
+		        notes: " I'll be in your neighborhood doing errands"
+		      },
+		    ];
+
+
+    };
+
+})();
+
+
+
+
+       
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-sm="column" layout-wrap layout-padding>
+   		<div layout="column" flex layout-fill>
+			 <md-content style="height: 450px; text-align: left;">
+			    
+			      <md-subheader class="primary-toolbar" style="text-align: left;">Unread Messages</md-subheader>
+			      <md-list layout-padding>
+			        <md-list-item class="md-3-line" ng-repeat="message in subheader.messages">
+			            <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+			            <div class="md-list-item-text">
+			              <h3>{{message.what}}</h3>
+			              <h4>{{message.who}}</h4>
+			              <p>
+			                {{message.notes}}
+			              </p>
+			            </div>
+			            <md-divider ng-if="!$last"></md-divider>
+			        </md-list-item>
+			      </md-list>
+			    
+			      <md-subheader class="warn-toolbar" style="text-align: left;">Late Messages</md-subheader>
+			      <md-list layout="column" layout-padding>
+			        <md-list-item class="md-3-line" ng-repeat="message in subheader.messages">
+			          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+			          <div class="md-list-item-text">
+			            <h3>{{message.what}}</h3>
+			            <h4>{{message.who}}</h4>
+			            <p>
+			              {{message.notes}}
+			            </p>
+			          </div>
+			          <md-divider ng-if="!$last"></md-divider>
+			        </md-list-item>
+			      </md-list>
+			    
+			      <md-subheader class="success-toolbar" style="text-align: left;">Read Messages</md-subheader>
+			      <md-list layout="column" layout-padding>
+			        <md-list-item class="md-3-line" ng-repeat="message in subheader.messages">
+			          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+			          <div class="md-list-item-text">
+			            <h3>{{message.what}}</h3>
+			            <h4>{{message.who}}</h4>
+			            <p>
+			              {{message.notes}}
+			            </p>
+			          </div>
+			          <md-divider ng-if="!$last"></md-divider>
+			        </md-list-item>
+			      </md-list>
+			    
+			      <md-subheader class="simple-toolbar" style="text-align: left;">Archived messages</md-subheader>
+			      <md-list layout="column" layout-padding>
+			        <md-list-item class="md-3-line" ng-repeat="message in subheader.messages">
+			          <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
+			          <div class="md-list-item-text">
+			            <h3>{{message.what}}</h3>
+			            <h4>{{message.who}}</h4>
+			            <p>
+			              {{message.notes}}
+			            </p>
+			          </div>
+			          <md-divider ng-if="!$last"></md-divider>
+			        </md-list-item>
+			      </md-list>
+			    
+			  </md-content>
+		  </div>
+	</section>   	
+
+</md-content>

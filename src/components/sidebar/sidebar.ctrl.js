@@ -64,7 +64,11 @@
         }, {
             icon: 'truck',
             name: 'Slider',
-            link: '#/slider'
+            link: '#/slider'        
+        }, {
+            icon: 'truck',
+            name: 'Subheader',
+            link: '#/subheader'
         }];
     };
 })();

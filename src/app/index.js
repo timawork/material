@@ -94,7 +94,12 @@
                     url: '/slider',
                     templateUrl: 'app/slider/slider.html',
                     controller: 'SlidersCtrl',
-                    controllerAs: 'slider'
+                    controllerAs: 'slider'                
+                }).state('subheader', {
+                    url: '/subheader',
+                    templateUrl: 'app/subheader/subheader.html',
+                    controller: 'SubheadersCtrl',
+                    controllerAs: 'subheader'
                 });
 
             $urlRouterProvider.otherwise('/');

@@ -432,15 +432,18 @@ md-option[selected] {
 //Toolbars
 
 .success-toolbar {
-	background: $success
+	background: $success;
+	color: $white;
 }
 
 .primary-toolbar {
-	background: $primary
+	background: $primary;
+	color: $white;
 }
 
 .warn-toolbar {
-	background: $warn
+	background: $warn;
+	color: $white;
 }
 
 .simple-toolbar {
