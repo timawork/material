@@ -104,7 +104,12 @@
                     url: '/toolbar',
                     templateUrl: 'app/toolbars/toolbar.html',
                     controller: 'ToolBarsCtrl',
-                    controllerAs: 'toolbar'
+                    controllerAs: 'toolbar'                
+                }).state('tooltip', {
+                    url: '/tooltips',
+                    templateUrl: 'app/tooltips/tooltips.html',
+                    controller: 'TooltipsCtrl',
+                    controllerAs: 'tooltips'
                 });
 
             $urlRouterProvider.otherwise('/');
