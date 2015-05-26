@@ -85,6 +85,16 @@
                     templateUrl: 'app/tabs/tabs.html',
                     controller: 'TabsCtrl',
                     controllerAs: 'tabs'
+                }).state('bottom-menu', {
+                    url: '/bottom-menu',
+                    templateUrl: 'app/bottom-menu/bottom-menu.html',
+                    controller: 'BottomMCtrl',
+                    controllerAs: 'bottom-menu'                
+                }).state('slider', {
+                    url: '/slider',
+                    templateUrl: 'app/slider/slider.html',
+                    controller: 'SlidersCtrl',
+                    controllerAs: 'slider'
                 });
 
             $urlRouterProvider.otherwise('/');

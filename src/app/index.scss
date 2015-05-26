@@ -118,6 +118,7 @@ $primary-rgba: rgba(0, 24, 80, 0.3)!important;
 $warn-rgba: rgba(207, 31, 33, 0.3)!important;
 $success-rgba: rgba(22, 183, 108, 0.3)!important;
 
+
 .primary-clr {
 	color: $primary
 }
@@ -485,6 +486,32 @@ md-option[selected] {
 	background-color:$success
 }
 
+//SLIDERS
+
+.primary-slider .md-thumb:after,
+.primary-slider .md-track-fill {
+	border-color:$primary;
+	background-color:$primary;
+}
+
+.warn-slider .md-thumb:after,
+.warn-slider .md-track-fill {
+	border-color:$warn;
+	background-color:$warn;
+}
+
+.success-slider .md-thumb:after,
+.success-slider .md-track-fill {
+	border-color:$success;
+	background-color:$success;
+}
+
+.md-sign:after {
+	border-top-color: $text-clr;
+}
+.md-sign {
+	background-color: $text-clr;
+}
 
 
 

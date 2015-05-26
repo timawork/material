@@ -1,0 +1,150 @@
+<md-toolbar class="md-whiteframe-z1">  
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">SLIDER</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+&#x3C;!--SLIDER &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x439;--&#x3E;
+&#x3C;md-slider flex min=&#x22;0&#x22; max=&#x22;255&#x22; ng-model=&#x22;color.red&#x22; aria-label=&#x22;red&#x22; id=&#x22;red-slider&#x22; class=&#x22;warn-slider&#x22;&#x3E;&#x3C;/md-slider&#x3E;
+
+&#x3C;!--SLIDER &#x441; &#x43F;&#x443;&#x437;&#x44B;&#x440;&#x435;&#x43C;--&#x3E;
+&#x3C;md-slider flex md-discrete ng-model=&#x22;rating1&#x22; step=&#x22;1&#x22; min=&#x22;1&#x22; max=&#x22;5&#x22; aria-label=&#x22;rating&#x22; class=&#x22;success-slider&#x22;&#x3E;&#x3C;/md-slider&#x3E;
+
+&#x3C;!--SLIDER desibled--&#x3E;
+&#x3C;md-slider ng-model=&#x22;disabled1&#x22; ng-disabled=&#x22;true&#x22; aria-label=&#x22;Disabled 1&#x22;&#x3E;&#x3C;/md-slider&#x3E;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">
+			  	
+.primary-slider
+.warn-slider
+.success-slider
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+				(function() {  
+				    'use strict';
+
+				    angular.module('fm')
+				        .controller('SlidersCtrl', sliderCtrl);
+
+				    sliderCtrl.$inject = ['$scope']
+
+				    function sliderCtrl($scope) {
+				        var vm = this;
+
+						$scope.color = {
+						    red: Math.floor(Math.random() * 255),
+						    green: Math.floor(Math.random() * 255),
+						    blue: Math.floor(Math.random() * 255)
+						  };
+						  $scope.rating1 = 3;
+						  $scope.rating2 = 2;
+						  $scope.rating3 = 4;
+						  $scope.disabled1 = 0;
+						  $scope.disabled2 = 70;
+				    };
+
+				})();
+     
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left; ">
+	 <md-content style="margin: 16px; padding:16px; width: 100%">
+	    <h3>
+	      RGB <span ng-attr-style="border: 1px solid #333; background: rgb({{color.red}},{{color.green}},{{color.blue}})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	    </h3>
+	    <div layout>
+	      <div flex="10" layout layout-align="center center">
+	        <span class="md-body-1">R</span>
+	      </div>
+	      <md-slider flex min="0" max="255" ng-model="color.red" aria-label="red" id="red-slider" class="warn-slider">
+	      </md-slider>
+	      <div flex="20" layout layout-align="center center">
+	        <input type="number" ng-model="color.red" aria-label="red" aria-controls="red-slider">
+	      </div>
+	    </div>
+	    <div layout>
+	      <div flex="10" layout layout-align="center center">
+	        <span class="md-body-1">G</span>
+	      </div>
+	      <md-slider flex ng-model="color.green" min="0" max="255" aria-label="green" id="green-slider" class="success-slider">
+	      </md-slider>
+	      <div flex="20" layout layout-align="center center">
+	        <input type="number" ng-model="color.green" aria-label="green" aria-controls="green-slider">
+	      </div>
+	    </div>
+	    <div layout>
+	      <div flex="10" layout layout-align="center center">
+	        <span class="md-body-1">B</span>
+	      </div>
+	      <md-slider flex ng-model="color.blue" min="0" max="255" aria-label="blue" id="blue-slider" class="primary-slider">
+	      </md-slider>
+	      <div flex="20" layout layout-align="center center">
+	        <input type="number" ng-model="color.blue" aria-label="blue" aria-controls="blue-slider">
+	      </div>
+	    </div>
+	    <h3>Rating: {{rating}}/5 - demo of theming classes</h3>
+	    <div layout>
+	      <div flex="10" layout layout-align="center center">
+	        <span class="md-body-1">default</span>
+	      </div>
+	      <md-slider flex md-discrete ng-model="rating1" step="1" min="1" max="5" aria-label="rating" class="success-slider">
+	      </md-slider>
+	    </div>
+	    <div layout>
+	      <div flex="10" layout layout-align="center center">
+	        <span class="md-body-1">md-warn</span>
+	      </div>
+	      <md-slider flex class="warn-slider" md-discrete ng-model="rating2" step="1" min="1" max="5" aria-label="rating">
+	      </md-slider>
+	    </div>
+	    <div layout>
+	      <div flex="10" layout layout-align="center center">
+	        <span class="md-body-1">md-primary</span>
+	      </div>
+	      <md-slider flex class="primary-slider" md-discrete ng-model="rating3" step="1" min="1" max="5" aria-label="rating">
+	      </md-slider>
+	    </div>
+	    <h3>Disabled</h3>
+	    <md-slider ng-model="disabled1" ng-disabled="true" aria-label="Disabled 1"></md-slider>
+	    <md-slider ng-model="disabled2" ng-disabled="true" aria-label="Disabled 2"></md-slider>
+	    <h3>Disabled, Discrete</h3>
+	    <md-slider ng-model="disabled1" ng-disabled="true" step="3" md-discrete min="0" max="10" aria-label="Disabled discrete 1"></md-slider>
+	    <md-slider ng-model="disabled2" ng-disabled="true" step="10" md-discrete aria-label="Disabled discrete 2"></md-slider>
+	  </md-content>
+	</section>   	
+
+</md-content>

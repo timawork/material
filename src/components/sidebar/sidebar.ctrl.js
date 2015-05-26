@@ -56,7 +56,15 @@
         }, {
             icon: 'truck',
             name: 'Tabs',
-            link: '#/tabs'
+            link: '#/tabs'        
+        }, {
+            icon: 'truck',
+            name: 'Bottom Menu',
+            link: '#/bottom-menu'        
+        }, {
+            icon: 'truck',
+            name: 'Slider',
+            link: '#/slider'
         }];
     };
 })();
