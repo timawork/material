@@ -525,6 +525,24 @@ md-toolbar.md-default-theme md-icon {
 	background-color: $text-clr;
 }
 
+md-whiteframe {
+	background: #fff;
+	margin: 20px;
+	padding: 20px;
+}
+
+//toasts
+
+md-toast a {
+	cursor: pointer;
+}
+.success-toast {
+	background: $success
+}
+.warn-toast {
+	background: $warn
+}
+
 
 
 /*====MEDIA====*/

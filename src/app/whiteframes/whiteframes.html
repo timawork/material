@@ -1,0 +1,75 @@
+<md-toolbar class="md-whiteframe-z1">  
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">WHITEFRAME</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+&#x3C;!--Whiteframes--&#x3E;
+&#x3C;md-whiteframe class=&#x22;md-whiteframe-z1&#x22; layout layout-align=&#x22;center center&#x22;&#x3E;&#x3C;/md-whiteframe&#x3E;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+md-whiteframe-z1
+md-whiteframe-z2
+md-whiteframe-z3
+md-whiteframe-z4
+md-whiteframe-z5
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+       
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left;">
+   		<div flex>
+			<md-whiteframe class="md-whiteframe-z1" layout layout-align="center center">
+			    <span>.md-whiteframe-z1</span>
+			  </md-whiteframe>
+			  <md-whiteframe class="md-whiteframe-z2" layout layout-align="center center">
+			    <span>.md-whiteframe-z2</span>
+			  </md-whiteframe>
+			  <md-whiteframe class="md-whiteframe-z3" layout layout-align="center center">
+			    <span>.md-whiteframe-z3</span>
+			  </md-whiteframe>
+			  <md-whiteframe class="md-whiteframe-z4" layout layout-align="center center">
+			    <span>.md-whiteframe-z4</span>
+			  </md-whiteframe>
+			  <md-whiteframe class="md-whiteframe-z5" layout layout-align="center center">
+			    <span>.md-whiteframe-z5</span>
+			  </md-whiteframe>		    
+	  	</div>
+	</section>   	
+
+</md-content>

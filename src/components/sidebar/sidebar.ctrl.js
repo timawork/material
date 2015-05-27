@@ -76,7 +76,15 @@
         },  {
             icon: 'truck',
             name: 'Tooltips',
-            link: '#/tooltips' 
+            link: '#/tooltips'  
+        },  {
+            icon: 'truck',
+            name: 'Toasts',
+            link: '#/toasts'  
+        },  {
+            icon: 'truck',
+            name: 'Whiteframes',
+            link: '#/whiteframes' 
         }];
     };
 })();

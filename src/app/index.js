@@ -109,7 +109,17 @@
                     url: '/tooltips',
                     templateUrl: 'app/tooltips/tooltips.html',
                     controller: 'TooltipsCtrl',
-                    controllerAs: 'tooltips'
+                    controllerAs: 'tooltips'   
+                }).state('whiteframes', {
+                    url: '/whiteframes',
+                    templateUrl: 'app/whiteframes/whiteframes.html',
+                    controller: 'WhiteframesCtrl',
+                    controllerAs: 'whiteframes'                
+                }).state('toasts', {
+                    url: '/toasts',
+                    templateUrl: 'app/toasts/toasts.html',
+                    controller: 'ToastsCtrl',
+                    controllerAs: 'toasts'
                 });
 
             $urlRouterProvider.otherwise('/');
