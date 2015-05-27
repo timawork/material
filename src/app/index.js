@@ -120,6 +120,11 @@
                     templateUrl: 'app/toasts/toasts.html',
                     controller: 'ToastsCtrl',
                     controllerAs: 'toasts'
+                }).state('sidenav', {
+                    url: '/sidenav',
+                    templateUrl: 'app/sidenav/sidenav.html',
+                    controller: 'SidenavsCtrl',
+                    controllerAs: 'sidenav'
                 });
 
             $urlRouterProvider.otherwise('/');

@@ -15,7 +15,7 @@
             link: '#/'
         },  {
             icon: 'truck',
-            name: 'Bottom Menu',
+            name: 'Bottom Menu ???',
             link: '#/bottom-menu'        
         },  {
             icon: 'truck',
@@ -57,6 +57,10 @@
             icon: 'truck',
             name: 'Scroll content',
             link: '#/scroll-content'
+        },  {
+            icon: 'truck',
+            name: 'Sidenav',
+            link: '#/sidenav'
         },  {
             icon: 'truck',
             name: 'Slider',
