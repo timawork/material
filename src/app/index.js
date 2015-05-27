@@ -125,6 +125,11 @@
                     templateUrl: 'app/sidenav/sidenav.html',
                     controller: 'SidenavsCtrl',
                     controllerAs: 'sidenav'
+                }).state('autocomplete', {
+                    url: '/autocomplete',
+                    templateUrl: 'app/autocomplete/autocomplete.html',
+                    controller: 'DemoCtrl',
+                    controllerAs: 'autocomplete'
                 });
 
             $urlRouterProvider.otherwise('/');

@@ -1,0 +1,82 @@
+<md-toolbar class="md-whiteframe-z1">  
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">AUTOCOMPLETE</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+       
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex ng-controller="DemoCtrl as ctrl">
+		  <md-content layout-padding layout="column">
+		    <form ng-submit="$event.preventDefault()">
+		      <p>Use <code>&lt;md-autocomplete&gt;</code> to search for matches from local or remote data sources.</p>
+		      <md-autocomplete
+		          ng-disabled="ctrl.isDisabled"
+		          md-no-cache="ctrl.noCache"
+		          md-selected-item="ctrl.selectedItem"
+		          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+		          md-search-text="ctrl.searchText"
+		          md-selected-item-change="ctrl.selectedItemChange(item)"
+		          md-items="item in ctrl.querySearch(ctrl.searchText)"
+		          md-item-text="item.display"
+		          md-min-length="0"
+		          placeholder="What is your favorite US state?">
+		        <md-item-template>
+		          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+		        </md-item-template>
+		        <md-not-found>
+		          No matches found for "{{ctrl.searchText}}".
+		        </md-not-found>
+		      </md-autocomplete>
+		      <br/>
+		      <md-checkbox ng-model="ctrl.simulateQuery" class="success-checkbox">Simulate query for results?</md-checkbox>
+		      <md-checkbox ng-model="ctrl.noCache" class="success-checkbox">Disable caching of queries?</md-checkbox>
+		      <md-checkbox ng-model="ctrl.isDisabled" class="success-checkbox">Disable the input?</md-checkbox>
+		      <p style="padding-left: 15px;">By default, <code>&lt;md-autocomplete&gt;</code> will cache results when performing a query.  After the initial call is performed, it will use the cached results to eliminate unnecessary server requests or lookup logic. This can be disabled above.</p>
+		    </form>
+		  </md-content>
+	    </div>
+	</section>
+</md-content>

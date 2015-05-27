@@ -10,6 +10,10 @@
         var vm = this; // use vm (ViewModel) istead $scope
 
         vm.links = [{
+            icon: 'truck',
+            name: 'Autocomplete',
+            link: '#/autocomplete'        
+        },  {
             icon: 'dot-circle-o',
             name: 'Buttons',
             link: '#/'
