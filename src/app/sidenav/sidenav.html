@@ -22,7 +22,61 @@
 			  useWrapMode : true,
 			  theme:'merbivore',
 			  mode: 'html'}">
-
+&#x3C;!--sidenavs--&#x3E;
+&#x9;    &#x3C;md-sidenav flex class=&#x22;md-sidenav-left md-whiteframe-z2&#x22; md-component-id=&#x22;leftinner&#x22; md-is-locked-open=&#x22;$mdMedia(&#x27;gt-md&#x27;)&#x22; style=&#x22;padding:0&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-toolbar class=&#x22;success-toolbar&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;h1 class=&#x22;md-toolbar-tools&#x22;&#x3E;Sidenav Left&#x3C;/h1&#x3E;
+&#x9;&#x9;      &#x3C;/md-toolbar&#x3E;
+&#x9;&#x9;      &#x3C;md-content layout-padding ng-controller=&#x22;LeftCtrl&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;md-button ng-click=&#x22;close()&#x22; class=&#x22;md-primary&#x22; hide-gt-md&#x3E;
+&#x9;&#x9;          Close Sidenav Left
+&#x9;&#x9;        &#x3C;/md-button&#x3E;
+&#x9;&#x9;        &#x3C;p hide-md show-gt-md&#x3E;
+&#x9;&#x9;          This sidenav is locked open on your device. To go back to the default behavior,
+&#x9;&#x9;          narrow your display.
+&#x9;&#x9;        &#x3C;/p&#x3E;
+&#x9;&#x9;      &#x3C;/md-content&#x3E;
+&#x9;&#x9;    &#x3C;/md-sidenav&#x3E;
+&#x9;&#x9;    &#x3C;md-content flex layout-padding&#x3E;
+&#x9;&#x9;      &#x3C;div layout=&#x22;column&#x22; layout-fill layout-align=&#x22;top center&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;p&#x3E;
+&#x9;&#x9;        The left sidenav will &#x27;lock open&#x27; on a medium (&#x3E;=960px wide) device.
+&#x9;&#x9;        &#x3C;/p&#x3E;
+&#x9;&#x9;        &#x3C;p&#x3E;
+&#x9;&#x9;        The right sidenav will focus on a specific child element.
+&#x9;&#x9;        &#x3C;/p&#x3E;
+&#x9;&#x9;        &#x3C;div&#x3E;
+&#x9;&#x9;          &#x3C;md-button ng-click=&#x22;toggleLeftex()&#x22;
+&#x9;&#x9;            class=&#x22;md-primary&#x22; hide-gt-md&#x3E;
+&#x9;&#x9;            Toggle left
+&#x9;&#x9;          &#x3C;/md-button&#x3E;
+&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;        &#x3C;div&#x3E;
+&#x9;&#x9;          &#x3C;md-button ng-click=&#x22;toggleRight()&#x22;
+&#x9;&#x9;            class=&#x22;md-primary&#x22;&#x3E;
+&#x9;&#x9;            Toggle right
+&#x9;&#x9;          &#x3C;/md-button&#x3E;
+&#x9;&#x9;        &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;div flex&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x9;    &#x3C;/md-content&#x3E;
+&#x9;&#x9;    &#x3C;md-sidenav class=&#x22;md-sidenav-right md-whiteframe-z2&#x22; md-component-id=&#x22;right&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-toolbar class=&#x22;warn-toolbar&#x22;&#x3E;
+&#x9;&#x9;        &#x3C;h1 class=&#x22;md-toolbar-tools&#x22;&#x3E;Sidenav Right&#x3C;/h1&#x3E;
+&#x9;&#x9;      &#x3C;/md-toolbar&#x3E;
+&#x9;&#x9;      &#x3C;md-content ng-controller=&#x22;RightCtrl&#x22; layout-padding&#x3E;
+&#x9;&#x9;        &#x3C;form&#x3E;
+&#x9;&#x9;          &#x3C;md-input-container&#x3E;
+&#x9;&#x9;            &#x3C;label for=&#x22;testInput&#x22;&#x3E;Test input&#x3C;/label&#x3E;
+&#x9;&#x9;            &#x3C;input type=&#x22;text&#x22; id=&#x22;testInput&#x22;
+&#x9;&#x9;                   ng-model=&#x22;data&#x22; md-sidenav-focus&#x3E;
+&#x9;&#x9;          &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;        &#x3C;/form&#x3E;
+&#x9;&#x9;        &#x3C;md-button ng-click=&#x22;close()&#x22; class=&#x22;md-primary&#x22;&#x3E;
+&#x9;&#x9;          Close Sidenav Right
+&#x9;&#x9;        &#x3C;/md-button&#x3E;
+&#x9;&#x9;      &#x3C;/md-content&#x3E;
+&#x9;&#x9;    &#x3C;/md-sidenav&#x3E;
 			</div>	
 		</md-tab>
 		<md-tab label="CSS">
@@ -39,6 +93,58 @@
 			  showGutter: false,
 			  theme:'merbivore',
 			  mode: 'javascript'}">
+(function() {  
+    'use strict';
+
+    angular.module('fm')
+		.controller('SidenavsCtrl', sidenavCtrl)
+		.controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+			$scope.close = function () {
+				$mdSidenav('leftinner').close()
+				.then(function () {
+				  $log.debug("close LEFT is done");
+				});
+			};
+		})
+		.controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+		$scope.close = function () {
+			$mdSidenav('right').close()
+			.then(function () {
+			  	$log.debug("close RIGHT is done");
+			});
+		};
+		});
+
+    sidenavCtrl.$inject = ['$scope', '$timeout', '$mdSidenav', '$mdUtil', '$log']
+
+    function sidenavCtrl($scope, $timeout, $mdSidenav, $mdUtil, $log) {
+        var vm = this;
+
+	    $scope.toggleLeftex = buildToggler('leftinner');
+	    $scope.toggleRight = buildToggler('right');
+	    /**
+	     * Build handler to open/close a SideNav; when animation finishes
+	     * report completion in console
+	     */
+
+	     function buildToggler(navID) {
+	      var debounceFn =  $mdUtil.debounce(function(){
+	            $mdSidenav(navID)
+	              .toggle()
+	              .then(function () {
+	                $log.debug("toggle " + navID + " is done");
+	              });
+	          },300);
+	      return debounceFn;
+	    }
+
+    };
+
+})();
+
+
+
+
        
 
     			</div>	
@@ -48,7 +154,7 @@
    	
    	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left; height: 600px;">
 
-		    <md-sidenav flex class="md-sidenav-left md-whiteframe-z2" md-component-id="leftinner" md-is-locked-open="$mdMedia('gt-md')">
+		    <md-sidenav flex class="md-sidenav-left md-whiteframe-z2" md-component-id="leftinner" md-is-locked-open="$mdMedia('gt-md')" style="padding:0">
 		      <md-toolbar class="success-toolbar">
 		        <h1 class="md-toolbar-tools">Sidenav Left</h1>
 		      </md-toolbar>
