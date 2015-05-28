@@ -23,6 +23,7 @@
     self.selectedItem = null;
     self.searchText = null;
     self.querySearch = querySearch;
+    self.querySearchContact = querySearchContact;
     self.vegetables = loadVegetables();
     self.selectedVegetables = [];
     self.numberChips = [];
@@ -56,15 +57,15 @@
 		};
 
 
-  function querySearch (query) {
+  function querySearchContact (query) {
       var results = query ?
-          self.allContacts.filter(createFilterFor(query)) : [];
+          self.allContacts.filter(createFilterForContact(query)) : [];
       return results;
     }
     /**
      * Create filter function for a query string
      */
-    function createFilterFor(query) {
+    function createFilterForContact(query) {
       var lowercaseQuery = angular.lowercase(query);
       return function filterFn(contact) {
         return (contact._lowername.indexOf(lowercaseQuery) != -1);;

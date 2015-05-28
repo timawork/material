@@ -94,7 +94,7 @@
 		    <p>Contact Chips.</p>
 		    <md-contact-chips
 		        ng-model="chips.contacts"
-		        md-contacts="chips.querySearch($query)"
+		        md-contacts="chips.querySearchContact($query)"
 		        md-contact-name="name"
 		        md-contact-image="image"
 		        md-contact-email="email"
@@ -103,7 +103,9 @@
 		        placeholder="To">
 		    </md-contact-chips>
 		    <md-list class="fixedRows">
+
 		      <md-subheader class="md-no-sticky nobackground">Contacts</md-subheader>
+
 		      <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in chips.allContacts"
 		          ng-if="chips.contacts.indexOf(contact) < 0">
 		        <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
@@ -112,6 +114,7 @@
 		          <p>{{contact.email}}</p>
 		        </div>
 		      </md-list-item>
+
 		      <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in chips.contacts">
 		        <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}" />
 		        <div class="md-list-item-text compact">
@@ -119,6 +122,7 @@
 		          <p>{{contact.email}}</p>
 		        </div>
 		      </md-list-item>
+		      
 		    </md-list>
 		  </md-content>
 	    </div>
