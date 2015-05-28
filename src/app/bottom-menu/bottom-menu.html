@@ -22,7 +22,49 @@
 			  useWrapMode : true,
 			  theme:'merbivore',
 			  mode: 'html'}">
+&#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-wrap layout-padding style=&#x22;text-align: left; height: 450px&#x22; ng-controller=&#x22;BottomSheetExample&#x22;&#x3E;
+   &#x9;&#x9;&#x3C;div flex&#x3E;
+&#x9;&#x9;  &#x3C;p style=&#x22;padding-left: 20px;&#x22; class=&#x22;md-body-1&#x22;&#x3E;
+&#x9;&#x9;    Bottom sheet can be dismissed with the service or a swipe down.
+&#x9;&#x9;  &#x3C;/p&#x3E;
+&#x9;&#x9;  &#x3C;div class=&#x22;bottom-sheet-demo inset&#x22; layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;center&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;md-button class=&#x22;md-primary&#x22; ng-click=&#x22;showListBottomSheet($event)&#x22;&#x3E;
+&#x9;&#x9;      Show as List
+&#x9;&#x9;    &#x3C;/md-button&#x3E;
+&#x9;&#x9;    &#x3C;md-button class=&#x22;md-primary&#x22; ng-click=&#x22;showGridBottomSheet($event)&#x22;&#x3E;
+&#x9;&#x9;      Show as Grid
+&#x9;&#x9;    &#x3C;/md-button&#x3E;
+&#x9;&#x9;  &#x3C;/div&#x3E;
+&#x9;&#x9;  &#x3C;br/&#x3E;
+&#x9;&#x9;  &#x3C;b layout=&#x22;row&#x22; layout-align=&#x22;center center&#x22; layout-margin&#x3E;
+&#x9;&#x9;    {{alert}}
+&#x9;&#x9;  &#x3C;/b&#x3E; &#x9;
+&#x9;  &#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/section&#x3E;  
 
+&#x3C;!--bottom-sheet-grid-template--&#x3E;
+&#x3C;md-bottom-sheet class=&#x22;md-grid&#x22;&#x3E;
+  &#x3C;md-list&#x3E;
+    &#x3C;md-list-item ng-repeat=&#x22;item in items&#x22;&#x3E;
+      &#x3C;md-button class=&#x22;md-grid-item-content&#x22; ng-click=&#x22;listItemClick($index)&#x22;&#x3E;
+        &#x3C;md-icon class=&#x22;{{item.icon}}&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+        &#x3C;div class=&#x22;md-grid-text&#x22;&#x3E; {{ item.name }} &#x3C;/div&#x3E;
+      &#x3C;/md-button&#x3E;
+    &#x3C;/md-list-item&#x3E;
+  &#x3C;/md-list&#x3E;
+&#x3C;/md-bottom-sheet&#x3E;
+
+&#x3C;!--bottom-sheet-list-template--&#x3E;
+&#x3C;md-bottom-sheet class=&#x22;md-list md-has-header&#x22;&#x3E;
+  &#x3C;md-subheader&#x3E;Comment Actions&#x3C;/md-subheader&#x3E;
+  &#x3C;md-list&#x3E;
+    &#x3C;md-list-item ng-repeat=&#x22;item in items&#x22;&#x3E;
+      &#x3C;md-button class=&#x22;md-list-item-content&#x22; ng-click=&#x22;listItemClick($index)&#x22;&#x3E;
+        &#x3C;md-icon class=&#x22;{{item.icon}}&#x22;&#x3E;&#x3C;/md-icon&#x3E;
+        &#x3C;span class=&#x22;md-inline-list-icon-label&#x22;&#x3E;{{ item.name }}&#x3C;/span&#x3E;
+      &#x3C;/md-button&#x3E;
+    &#x3C;/md-list-item&#x3E;
+  &#x3C;/md-list&#x3E;
 			</div>	
 		</md-tab>
 		<md-tab label="CSS">
@@ -40,6 +82,77 @@
 			  showGutter: false,
 			  theme:'merbivore',
 			  mode: 'javascript'}">
+(function() {   
+    'use strict';
+
+    angular.module('fm')
+        .controller('BottomMCtrl', bottomenuCtrl)
+
+        .controller('BottomSheetExample', function($scope, $timeout, $mdBottomSheet) {
+			  $scope.alert = '';
+			  $scope.showListBottomSheet = function($event) {
+			    $scope.alert = '';
+			    $mdBottomSheet.show({
+			      templateUrl: 'app/bottom-menu/bottom-sheet-list-template.html',
+			      controller: 'ListBottomSheetCtrl',
+			      targetEvent: $event
+			    }).then(function(clickedItem) {
+			      $scope.alert = clickedItem.name + ' clicked!';
+			    });
+			  };
+			  $scope.showGridBottomSheet = function($event) {
+			    $scope.alert = '';
+			    $mdBottomSheet.show({
+			      templateUrl: 'app/bottom-menu/bottom-sheet-grid-template.html',
+			      controller: 'GridBottomSheetCtrl',
+			      targetEvent: $event
+			    }).then(function(clickedItem) {
+			      $scope.alert = clickedItem.name + ' clicked!';
+			    });
+			  };
+			})
+			.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet) {
+			  $scope.items = [
+			    { name: 'Share', icon: 'fa fa-paint-brush' },
+			    { name: 'Upload', icon: 'fa fa-print' },
+			    { name: 'Copy', icon: 'fa fa-thumbs-up' },
+			    { name: 'Print this page', icon: 'fa fa-file-text' },
+			  ];
+			  $scope.listItemClick = function($index) {
+			    var clickedItem = $scope.items[$index];
+			    $mdBottomSheet.hide(clickedItem);
+			  };
+			})
+			.controller('GridBottomSheetCtrl', function($scope, $mdBottomSheet) {
+			  $scope.items = [
+			    { name: 'Hangout', icon: 'fa fa-cogs' },
+			    { name: 'Mail', icon: 'fa fa-floppy-o' },
+			    { name: 'Message', icon: 'fa fa-hand-o-up' },
+			    { name: 'Copy', icon: 'fa fa-cc-paypal' },
+			    { name: 'Facebook', icon: 'fa fa-codepen' },
+			    { name: 'Twitter', icon: 'fa fa-dribbble' },
+			  ];
+			  $scope.listItemClick = function($index) {
+			    var clickedItem = $scope.items[$index];
+			    $mdBottomSheet.hide(clickedItem);
+			  };
+			});
+
+   			bottomenuCtrl.$inject = ['$scope']
+
+		    function bottomenuCtrl($scope) {
+		        var vm = this;
+
+
+
+
+		   };
+
+})();
+
+
+
+
        
 
     			</div>	

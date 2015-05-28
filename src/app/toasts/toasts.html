@@ -22,7 +22,41 @@
 			  useWrapMode : true,
 			  theme:'merbivore',
 			  mode: 'html'}">
-
+&#x9;&#x3C;section layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-wrap layout-padding style=&#x22;text-align: left;&#x22;&#x3E;
+   &#x9;&#x9;&#x3C;div flex&#x3E;
+&#x9;&#x9;    &#x3C;p&#x3E;Toast can be dismissed with a swipe, a timer, or a button.&#x3C;/p&#x3E;
+&#x9;&#x9;    &#x3C;div layout=&#x22;row&#x22; layout-sm=&#x22;column&#x22; layout-align=&#x22;space-around&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;div style=&#x22;width:50px&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;md-button ng-click=&#x22;showCustomToast()&#x22;&#x3E;
+&#x9;&#x9;        Show Custom
+&#x9;&#x9;      &#x3C;/md-button&#x3E;&#x9;&#x9;      
+&#x9;&#x9;      &#x3C;md-button ng-click=&#x22;showSuccessToast()&#x22;&#x3E;
+&#x9;&#x9;        Success
+&#x9;&#x9;      &#x3C;/md-button&#x3E;&#x9;&#x9;      
+&#x9;&#x9;      &#x3C;md-button ng-click=&#x22;showWarningToast()&#x22;&#x3E;
+&#x9;&#x9;        Warning
+&#x9;&#x9;      &#x3C;/md-button&#x3E;
+&#x9;&#x9;      &#x3C;md-button ng-click=&#x22;showSimpleToast()&#x22;&#x3E;
+&#x9;&#x9;        Show Simple
+&#x9;&#x9;      &#x3C;/md-button&#x3E;
+&#x9;&#x9;      &#x3C;md-button class=&#x22;md-raised&#x22; ng-click=&#x22;showActionToast()&#x22;&#x3E;
+&#x9;&#x9;        Show With Action
+&#x9;&#x9;      &#x3C;/md-button&#x3E;
+&#x9;&#x9;      &#x3C;div style=&#x22;width:50px&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x9;&#x9;    &#x3C;/div&#x3E;
+&#x9;&#x9;    &#x3C;div&#x3E;
+&#x9;&#x9;      &#x3C;br/&#x3E;
+&#x9;&#x9;      &#x3C;b&#x3E;Toast Position: &#x22;{{getToastPosition()}}&#x22;&#x3C;/b&#x3E;
+&#x9;&#x9;      &#x3C;br/&#x3E;
+&#x9;&#x9;      &#x3C;md-checkbox ng-repeat=&#x22;(name, isSelected) in toastPosition&#x22;
+&#x9;&#x9;        ng-model=&#x22;toastPosition[name]&#x22;
+&#x9;&#x9;&#x9;&#x9;class=&#x22;warn-checkbox&#x22;
+&#x9;&#x9;        &#x3E;
+&#x9;&#x9;        {{name}}
+&#x9;&#x9;      &#x3C;/md-checkbox&#x3E;
+&#x9;&#x9;    &#x3C;/div&#x3E;   
+&#x9;  &#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/section&#x3E;   
 			</div>	
 		</md-tab>
 		<md-tab label="CSS">
@@ -39,6 +73,92 @@
 			  showGutter: false,
 			  theme:'merbivore',
 			  mode: 'javascript'}">
+(function() {  
+    'use strict';
+
+    angular.module('fm')
+        .controller('ToastsCtrl', toastCtrl)
+    	.controller('ToastCloseCtrl', function($scope, $mdToast) {
+		  $scope.closeToast = function() {
+		    $mdToast.hide();
+		  };
+		});
+
+    toastCtrl.$inject = ['$scope', '$mdToast', '$animate']
+
+
+    function toastCtrl($scope, $mdToast, $animate) {
+        var vm = this;
+
+		 $scope.toastPosition = {
+		    bottom: false,
+		    top: true,
+		    left: false,
+		    right: true
+		  };
+
+		  $scope.getToastPosition = function() {
+		    return Object.keys($scope.toastPosition)
+		      .filter(function(pos) { return $scope.toastPosition[pos]; })
+		      .join(' ');
+		  };
+		  $scope.showCustomToast = function() {
+		    $mdToast.show({
+		      templateUrl: '/app/toasts/toast-template.html',
+		      controller: 'ToastCloseCtrl',
+		      hideDelay: 6000,
+		      position: $scope.getToastPosition()
+		    });
+		  };		  
+		  $scope.showSuccessToast = function() {
+		    $mdToast.show({
+		      templateUrl: '/app/toasts/toast-success-template.html',
+		      controller: 'ToastCloseCtrl',
+		      hideDelay: 6000,
+		      position: $scope.getToastPosition()
+		    });
+		  };		  
+		  $scope.showWarningToast = function() {
+		    $mdToast.show({
+		      templateUrl: '/app/toasts/toast-warn-template.html',
+		      controller: 'ToastCloseCtrl',
+		      hideDelay: 6000,
+		      position: $scope.getToastPosition()
+		    });
+		  };
+		  $scope.showSimpleToast = function() {
+		    $mdToast.show(
+		      $mdToast.simple()
+		      	.content('Simple Toast!')
+		        .position($scope.getToastPosition())
+		        .hideDelay(3000)
+		    );
+		  };
+		  $scope.showActionToast = function() {
+		    var toast = $mdToast.simple()
+		          .content('Action Toast!')
+		          .action('OK')
+		          .highlightAction(false)
+		          .position($scope.getToastPosition());
+		    $mdToast.show(toast).then(function() {
+		      alert('You clicked \'OK\'.');
+		    });
+		  };
+
+		  $scope.closeToast = function() {
+		  	console.log("close")
+		    $mdToast.hide();
+		  };
+
+
+
+
+    };
+
+})();
+
+
+
        
 
     			</div>	

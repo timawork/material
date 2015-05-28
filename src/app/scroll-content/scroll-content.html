@@ -23,7 +23,15 @@
 			  theme:'merbivore',
 			  mode: 'html'}">
 
-
+&#x9;&#x9;  &#x3C;md-toolbar class=&#x22;primary-toolbar md-whiteframe-z1&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;div class=&#x22;md-toolbar-tools&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;h2 class=&#x22;md-flex&#x22;&#x3E;primary-toolbar&#x3C;/h2&#x3E;
+&#x9;&#x9;    &#x3C;/div&#x3E;
+&#x9;&#x9;  &#x3C;/md-toolbar&#x3E;
+&#x9;&#x9;  &#x3C;md-content layout-padding style=&#x22;height: 300px;padding: 24px;&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;p&#x3E;Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.&#x3C;/p&#x3E;
+&#x9;&#x9;   
+&#x9;&#x9;  &#x3C;/md-content&#x3E;
 
 			</div>	
 		</md-tab>
@@ -41,6 +49,24 @@
 			  showGutter: false,
 			  theme:'merbivore',
 			  mode: 'javascript'}">
+(function() {  
+    'use strict';
+
+    angular.module('fm')
+        .controller('ScrollContCtrl', toolbarsCtrl);
+
+    toolbarsCtrl.$inject = ['$scope']
+
+    function toolbarsCtrl($scope) {
+        var vm = this;
+
+
+
+
+
+    };
+
+})();
        
 
     			</div>	

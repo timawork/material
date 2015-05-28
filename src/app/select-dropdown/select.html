@@ -22,13 +22,15 @@
 			  useWrapMode : true,
 			  theme:'merbivore',
 			  mode: 'html'}">
+   &#x9;&#x3C;section layout=&#x22;row&#x22; layout-wrap layout-padding style=&#x22;text-align: center&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div flex&#x3E;
 &#x9;&#x9;  &#x3C;md-select placeholder=&#x22;Pick&#x22; ng-model=&#x22;someVal&#x22; class=&#x22;primary-select&#x22;&#x3E;
 &#x9;&#x9;    &#x3C;md-option value=&#x22;1&#x22;&#x3E;One&#x3C;/md-option&#x3E;
 &#x9;&#x9;    &#x3C;md-option value=&#x22;2&#x22;&#x3E;Two&#x3C;/md-option&#x3E;
 &#x9;&#x9;  &#x3C;/md-select&#x3E;
+&#x9;&#x9;&#x3C;/div&#x3E;
 
-
-
+&#x9;&#x9;&#x3C;div flex&#x3E;
 &#x9;&#x9;&#x9;&#x3C;div layout=&#x22;column&#x22; layout-align=&#x22;center center&#x22;&#x3E;
 &#x9;&#x9;&#x9;  &#x3C;div layout=&#x22;column&#x22; layout-align=&#x22;center center&#x22; style=&#x22;height: 100px;&#x22;&#x3E;
 &#x9;&#x9;&#x9;    &#x3C;md-select ng-model=&#x22;favoriteTopping&#x22; placeholder=&#x22;Favorite Topping&#x22;&#x3E;
@@ -41,7 +43,42 @@
 &#x9;&#x9;&#x9;    &#x3C;/md-select&#x3E;
 &#x9;&#x9;&#x9;    &#x3C;p class=&#x22;md-caption&#x22;&#x3E;{{ favoriteTopping ? &#x27;Your favorite topping is &#x27; + favoriteTopping : &#x27;Please select a topping&#x27;}}&#x3C;/p&#x3E;
 &#x9;&#x9;&#x9;  &#x3C;/div&#x3E;
-&#x9;&#x9;&#x9;&#x3C;/div&#x3E;&#x9;
+&#x9;&#x9;&#x9;&#x3C;/div&#x3E;&#x9;&#x9;&#x9;
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/section&#x3E;
+
+&#x9;&#x3C;section layout=&#x22;row&#x22; layout-wrap layout-padding style=&#x22;text-align: center&#x22;&#x3E;
+&#x9;&#x9;&#x3C;div layout=&#x22;column&#x22; layout-align=&#x22;center center&#x22; style=&#x22;padding:40px&#x22;&#x3E;
+&#x9;&#x9;  &#x3C;p&#x3E;Select can call an arbitrary function on show. If this function returns a promise, it will display a loading indicator while it is being resolved:&#x3C;/p&#x3E;
+&#x9;&#x9;  &#x3C;div layout=&#x22;column&#x22; layout-align=&#x22;center center&#x22; style=&#x22;height: 100px;&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;md-select ng-model=&#x22;user&#x22; md-on-open=&#x22;loadUsers()&#x22; style=&#x22;min-width: 200px;&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-select-label&#x3E;{{ user ? user.name : &#x27;Assign to user&#x27; }}&#x3C;/md-select-label&#x3E;
+&#x9;&#x9;      &#x3C;md-option ng-value=&#x22;user&#x22; ng-repeat=&#x22;user in users&#x22;&#x3E;{{user.name}}&#x3C;/md-option&#x3E;
+&#x9;&#x9;    &#x3C;/md-select&#x3E;
+&#x9;&#x9;    &#x3C;p class=&#x22;md-caption&#x22;&#x3E;You have assigned the task to: {{ user ? user.name : &#x27;No one yet&#x27; }}&#x3C;/p&#x3E;
+&#x9;&#x9;  &#x3C;/div&#x3E;
+&#x9;&#x9;&#x3C;/div&#x3E;
+&#x9;&#x3C;/section&#x3E;
+
+&#x9;&#x3C;section layout=&#x22;row&#x22; layout-wrap layout-padding layout-align=&#x22;center center&#x22; style=&#x22;text-align:center&#x22;&#x3E;
+
+&#x9;&#x9;  &#x3C;form name=&#x22;myForm&#x22;&#x3E;
+&#x9;&#x9;    &#x3C;p&#x3E;Note that invalid styling only applies if invalid and dirty&#x3C;/p&#x3E;
+&#x9;&#x9;    &#x3C;md-input-container&#x3E;
+&#x9;&#x9;      &#x3C;md-select name=&#x22;myModel&#x22; placeholder=&#x22;Pick&#x22; ng-model=&#x22;myModel&#x22; required&#x3E;
+&#x9;&#x9;        &#x3C;md-option value=&#x22;1&#x22;&#x3E;One&#x3C;/md-option&#x3E;
+&#x9;&#x9;        &#x3C;md-option value=&#x22;2&#x22;&#x3E;Two&#x3C;/md-option&#x3E;
+&#x9;&#x9;      &#x3C;/md-select&#x3E;
+&#x9;&#x9;      &#x3C;div class=&#x22;errors&#x22; ng-messages=&#x22;myForm.myModel.$error&#x22; &#x3E;
+&#x9;&#x9;        &#x3C;div ng-message=&#x22;required&#x22;&#x3E;Required&#x3C;/div&#x3E;
+&#x9;&#x9;      &#x3C;/div&#x3E;
+&#x9;&#x9;    &#x3C;/md-input-container&#x3E;
+&#x9;&#x9;    &#x3C;div layout=&#x22;row&#x22; layout-align=&#x22;center center&#x22;&#x3E;
+&#x9;&#x9;      &#x3C;md-button ng-click=&#x22;clearValue()&#x22; class=&#x22;mx-button warn-btn&#x22; style=&#x22;margin-right: 20px;&#x22;&#x3E;Clear&#x3C;/md-button&#x3E;
+&#x9;&#x9;      &#x3C;md-button ng-click=&#x22;save()&#x22; ng-disabled=&#x22;myForm.$invalid&#x22; class=&#x22;mx-button primary-btn&#x22; layout layout-align=&#x22;center end&#x22;&#x3E;Save&#x3C;/md-button&#x3E;
+&#x9;&#x9;    &#x3C;/div&#x3E;
+&#x9;&#x9;  &#x3C;/form&#x3E;
+&#x9;&#x3C;/section&#x3E;
 			</div>	
 		</md-tab>
 		<md-tab label="CSS">
@@ -60,6 +97,19 @@
 			  showGutter: false,
 			  theme:'merbivore',
 			  mode: 'javascript'}">
+(function() {  
+    'use strict';
+
+    angular.module('fm')
+        .controller('selectsCtrl', selectCtrl);
+
+    selectCtrl.$inject = ['$scope', '$timeout']
+
+    function selectCtrl($scope, $timeout) {
+        var vm = this;
+
+
+
 	  $scope.toppings = [
 	    { category: 'meat', name: 'Pepperoni' },
 	    { category: 'meat', name: 'Sausage' },
@@ -69,7 +119,36 @@
 	    { category: 'veg', name: 'Onion' },
 	    { category: 'veg', name: 'Green Pepper' },
 	    { category: 'veg', name: 'Green Olives' },
-	  ];		
+	  ];
+	  
+ 		$scope.clearValue = function() {
+	    	console.log($scope.myModel)
+		    $scope.myModel = undefined;
+	    };
+
+	    $scope.save = function() {
+		    alert('Form was valid!');
+	    };
+
+		$scope.users = [];
+    	return $timeout(function() {
+	      $scope.users = [
+	        { id: 1, name: 'Scooby Doo' },
+	        { id: 2, name: 'Shaggy Rodgers' },
+	        { id: 3, name: 'Fred Jones' },
+	        { id: 4, name: 'Daphne Blake' },
+	        { id: 5, name: 'Velma Dinkley' },
+	      ];
+	    }, 650);
+
+	   
+
+
+
+    };
+
+})();
+		
 		        
 
     			</div>	

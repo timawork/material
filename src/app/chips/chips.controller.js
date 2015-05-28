@@ -9,7 +9,7 @@
 	function ChipsCtrl ($scope, $timeout, $q) {
 
 		var self = this;
-		self.readonly = false;
+
 
 	    self.querySearch = querySearch;
 	    self.allContacts = loadContacts();
