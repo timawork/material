@@ -1,18 +1,29 @@
 
 <md-toolbar class="md-whiteframe-z1 panel3">
-    <h1 class="md-toolbar-tools" layout-align="center">
+    <h1 class="md-toolbar-tools" layout-align="center"> 
         <a ng-href="#/">UI-KIT</a>
     </h1>
 </md-toolbar>
 
-<div data-ng-controller="sidebarCtrl as sidebar">
-    <ul class="side-nav">   
-        <li data-ng-repeat="link in sidebar.links">
-            <md-button ng-href="{{link.link}} " class=" text-left">
-                {{link.name}}
-            </md-button>
-        </li>
-    </ul>
-</div>   
+<ul class="mainul" data-ng-controller="sidebarCtrl as sidebar">
+    <li ng-repeat="item in sidebar.links">
+        <a class="ulink" href="#" ng-click="showDetails = ! showDetails"><strong>{{item.name}}</strong>
+            <i class="fa fa-chevron-down" style="float: right;"></i>
+        </a>
+         <div class="leftmenu-details" ng-class="{ 'hidden': ! showDetails }">
+            <div>
+                <ul class="side-nav">   
+                    <li data-ng-repeat="link in item.items">
+                        <md-button ng-href="{{link.link}} " class=" text-left">
+                            {{link.name}}
+                        </md-button>
+                    </li>
+                </ul>
+            </div>  
+         </div>
+    </li>
+</ul>
+
+ 
 
 

@@ -15,7 +15,7 @@
             'ui.router',
             'ui.ace',
             'ngMaterial',
-            'ngMessages',
+            'ngMessages'
         ])
 
         .config(function($stateProvider, $urlRouterProvider) {
@@ -128,8 +128,13 @@
                 }).state('autocomplete', {
                     url: '/autocomplete',
                     templateUrl: 'app/autocomplete/autocomplete.html',
-                    controller: 'DemoCtrl',
+                    controller: 'PageCtrl',
                     controllerAs: 'autocomplete'
+                }).state('pagination', {
+                    url: '/pagination',
+                    templateUrl: 'app/pagination/pagination.html',
+                    controller: 'DemoCtrl',
+                    controllerAs: 'pagination'
                 });
 
             $urlRouterProvider.otherwise('/');

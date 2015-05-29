@@ -10,10 +10,11 @@
     "angular-ui-router": "~0.2.13",
     "angular-ui-ace": "~0.2.3",
     "angular-material": "~0.9.0",
+    "highcharts-release": "~v4.1.5",
     "angular": "~1.3.4",
     "font-awesome": "~v4.3.0",
     "angular-messages": "~1.4.0",
-    "lodash": "~v3.5.0"
+    "lodash": "~v3.5.0"    
   },
   
   "devDependencies": {
