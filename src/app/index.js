@@ -134,7 +134,12 @@
                     url: '/pagination',
                     templateUrl: 'app/pagination/pagination.html',
                     controller: 'DemoCtrl',
-                    controllerAs: 'pagination'
+                    controllerAs: 'pagination'                
+                }).state('chart-baseline', {
+                    url: '/chart-baseline',
+                    templateUrl: 'app/chart-baseline/chart-baseline.html',
+                    controller: 'ChartBaselineCtrl',
+                    controllerAs: 'chart-baseline'
                 });
 
             $urlRouterProvider.otherwise('/');

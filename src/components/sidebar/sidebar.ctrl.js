@@ -106,12 +106,8 @@
                 name: 'All Charts',
                 items:  [{
                         icon: 'truck',
-                        name: 'Autocomplete',
-                        link: '#/autocomplete'        
-                    },{
-                        icon: 'truck',
-                        name: 'Autocomplete',
-                        link: '#/autocomplete'        
+                        name: 'Basic Line',
+                        link: '#/chart-baseline'        
                     }]
             }
         ];       
