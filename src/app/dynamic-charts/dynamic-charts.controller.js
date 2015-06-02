@@ -2,12 +2,12 @@
     'use strict'; 
 
     angular.module('fm')
-        .controller('DynamicCtrl', DynamicCtrl);
+        .controller('DynamicChartsCtrl', DynamicChartsCtrl);
 
-    DynamicCtrl.$inject = ['$scope']
+    DynamicChartsCtrl.$inject = ['$scope']
 
 
-    function DynamicCtrl($scope) {
+    function DynamicChartsCtrl($scope) {
         var vm = this;
 
             
@@ -82,7 +82,14 @@
             }]             
         });
     
-         /*===============// Spline updating each second ================*/ 
+        /*===============// Spline updating each second ================*/ 
+
+        /*=============== Master-detail chart ================*/  
+
+ 
+
+        /*===============// Master-detail chart ================*/ 
+
 
     };
 

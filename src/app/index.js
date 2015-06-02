@@ -154,7 +154,12 @@
                     url: '/pie-charts',
                     templateUrl: 'app/pie-charts/pie-charts.html',
                     controller: 'PieCtrl',
-                    controllerAs: 'pie-charts'
+                    controllerAs: 'pie-charts'                
+                }).state('dynamic-charts', {
+                    url: '/dynamic-charts',
+                    templateUrl: 'app/dynamic-charts/dynamic-charts.html',
+                    controller: 'DynamicChartsCtrl',
+                    controllerAs: 'dynamic-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

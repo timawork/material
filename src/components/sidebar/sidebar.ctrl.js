@@ -119,7 +119,11 @@
                     },  {
                         icon: 'truck',
                         name: 'Pie Charts',
-                        link: '#/pie-charts'     
+                        link: '#/pie-charts'   
+                    },  {
+                        icon: 'truck',
+                        name: 'Dynamic Charts',
+                        link: '#/dynamic-charts'     
                     }]
             }
         ];       
