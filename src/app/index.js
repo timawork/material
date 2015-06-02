@@ -150,6 +150,11 @@
                     templateUrl: 'app/column-bar-charts/column-bar-charts.html',
                     controller: 'ColBarCtrl',
                     controllerAs: 'column-bar-charts'
+                }).state('pie-charts', {
+                    url: '/pie-charts',
+                    templateUrl: 'app/pie-charts/pie-charts.html',
+                    controller: 'PieCtrl',
+                    controllerAs: 'pie-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

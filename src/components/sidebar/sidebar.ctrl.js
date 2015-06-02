@@ -115,7 +115,11 @@
                     },  {
                         icon: 'truck',
                         name: 'Column and Bar Charts',
-                        link: '#/column-bar-charts'     
+                        link: '#/column-bar-charts'  
+                    },  {
+                        icon: 'truck',
+                        name: 'Pie Charts',
+                        link: '#/pie-charts'     
                     }]
             }
         ];       
