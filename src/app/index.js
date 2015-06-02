@@ -139,7 +139,12 @@
                     url: '/line-charts',
                     templateUrl: 'app/line-charts/line-charts.html',
                     controller: 'ChartBaselineCtrl',
-                    controllerAs: 'line-charts'
+                    controllerAs: 'line-charts' 
+                }).state('area-charts', {
+                    url: '/area-charts',
+                    templateUrl: 'app/area-charts/area-charts.html',
+                    controller: 'AreaChartCtrl',
+                    controllerAs: 'area-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

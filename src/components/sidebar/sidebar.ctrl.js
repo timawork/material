@@ -107,7 +107,11 @@
                 items:  [{
                         icon: 'truck',
                         name: 'Line Charts',
-                        link: '#/line-charts'        
+                        link: '#/line-charts'   
+                    },  {
+                        icon: 'truck',
+                        name: 'Area Charts',
+                        link: '#/area-charts'     
                     }]
             }
         ];       
