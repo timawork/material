@@ -111,7 +111,11 @@
                     },  {
                         icon: 'truck',
                         name: 'Area Charts',
-                        link: '#/area-charts'     
+                        link: '#/area-charts'
+                    },  {
+                        icon: 'truck',
+                        name: 'Column and Bar Charts',
+                        link: '#/column-bar-charts'     
                     }]
             }
         ];       

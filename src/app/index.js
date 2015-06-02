@@ -145,6 +145,11 @@
                     templateUrl: 'app/area-charts/area-charts.html',
                     controller: 'AreaChartCtrl',
                     controllerAs: 'area-charts'
+                }).state('column-bar-charts', {
+                    url: '/column-bar-charts',
+                    templateUrl: 'app/column-bar-charts/column-bar-charts.html',
+                    controller: 'ColBarCtrl',
+                    controllerAs: 'column-bar-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

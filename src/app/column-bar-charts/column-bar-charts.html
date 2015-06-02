@@ -1,0 +1,99 @@
+<md-toolbar class="md-whiteframe-z1">   
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">COLUMN AND BAR CHARTS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+
+       
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+            <div id="basic_bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <div class="label">Basic Bar</div>
+    </section>   	
+
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+            <div id="stacked_bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <div class="label">Stacked Bar</div>
+    </section>    
+
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+            <div id="basic_column" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <div class="label">Basic Column</div>
+    </section>    
+
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+            <div id="stacked_column" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <div class="label">Stacked Column</div>
+    </section>    
+
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+            <div id="column_rotated_label" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        </div>
+        <div class="label">Column with rotated labels</div>
+    </section>    
+
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+ 
+        </div>
+        <div class="label">Column with drilldown Надо переделывать на ангуляр</div>
+    </section>    
+
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+           
+        </div>
+        <div class="label">Data defined in a HTML table НЕ РАБОТАЕТ</div>
+	</section>
+</md-content>
