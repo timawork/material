@@ -135,11 +135,11 @@
                     templateUrl: 'app/pagination/pagination.html',
                     controller: 'DemoCtrl',
                     controllerAs: 'pagination'                
-                }).state('chart-baseline', {
-                    url: '/chart-baseline',
-                    templateUrl: 'app/chart-baseline/chart-baseline.html',
+                }).state('line-charts', {
+                    url: '/line-charts',
+                    templateUrl: 'app/line-charts/line-charts.html',
                     controller: 'ChartBaselineCtrl',
-                    controllerAs: 'chart-baseline'
+                    controllerAs: 'line-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

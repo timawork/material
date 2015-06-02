@@ -1,0 +1,94 @@
+<md-toolbar class="md-whiteframe-z1">   
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">LINE CHARTS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+       
+
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+   	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+			
+			<div id="container" style="min-width: 300px; height: 300px; margin: 1em"></div>
+
+	    </div>
+	    <div class="label">Basic line</div>
+	</section>   	
+
+	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+			
+			<div id="basic_line_with_labels" style="min-width: 300px; height: 300px; margin: 1em" class="sandback"></div>
+
+	    </div>
+	    <div class="label">Basic line with data labels</div>
+	</section>	
+
+	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+			
+			<div id="time_series_zoomable" style="min-width: 300px; height: 300px; margin: 1em" class="sandback"></div>
+
+	    </div>
+	    <div class="label">Time Series Zoomable</div>
+	</section>	
+
+	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+			
+			<div id="spline_plot_bands" style="min-width: 300px; height: 300px; margin: 1em" class="sandback"></div>
+
+	    </div>
+	    <div class="label">Spline with plot bands</div>
+	</section>	
+
+	<section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+		<div flex>
+			
+			<div id="time_data_irregular" style="min-width: 300px; height: 300px; margin: 1em" class="sandback"></div>
+
+	    </div>
+	    <div class="label">Time data with irregular intervals</div>
+	</section>
+</md-content>

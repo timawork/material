@@ -106,8 +106,8 @@
                 name: 'All Charts',
                 items:  [{
                         icon: 'truck',
-                        name: 'Basic Line',
-                        link: '#/chart-baseline'        
+                        name: 'Line Charts',
+                        link: '#/line-charts'        
                     }]
             }
         ];       
