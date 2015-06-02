@@ -123,7 +123,11 @@
                     },  {
                         icon: 'truck',
                         name: 'Dynamic Charts',
-                        link: '#/dynamic-charts'     
+                        link: '#/dynamic-charts' 
+                    },  {
+                        icon: 'truck',
+                        name: 'Combination Charts',
+                        link: '#/combination-charts'     
                     }]
             }
         ];       

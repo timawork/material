@@ -160,6 +160,11 @@
                     templateUrl: 'app/dynamic-charts/dynamic-charts.html',
                     controller: 'DynamicChartsCtrl',
                     controllerAs: 'dynamic-charts'
+                }).state('combination-charts', {
+                    url: '/combination-charts',
+                    templateUrl: 'app/combination-charts/combination-charts.html',
+                    controller: 'CombinationCtrl',
+                    controllerAs: 'combination-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

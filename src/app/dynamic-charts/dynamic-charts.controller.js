@@ -84,12 +84,6 @@
     
         /*===============// Spline updating each second ================*/ 
 
-        /*=============== Master-detail chart ================*/  
-
- 
-
-        /*===============// Master-detail chart ================*/ 
-
 
     };
 
