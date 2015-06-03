@@ -164,7 +164,12 @@
                     url: '/combination-charts',
                     templateUrl: 'app/combination-charts/combination-charts.html',
                     controller: 'CombinationCtrl',
-                    controllerAs: 'combination-charts'
+                    controllerAs: 'combination-charts' 
+                }).state('heat-map-charts', {
+                    url: '/heat-map-charts',
+                    templateUrl: 'app/heat-map-charts/heat-map-charts.html',
+                    controller: 'HeatMapCtrl',
+                    controllerAs: 'heat-map-charts'
                 });
 
             $urlRouterProvider.otherwise('/');

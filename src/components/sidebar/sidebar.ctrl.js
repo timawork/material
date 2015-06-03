@@ -127,7 +127,11 @@
                     },  {
                         icon: 'truck',
                         name: 'Combination Charts',
-                        link: '#/combination-charts'     
+                        link: '#/combination-charts'
+                    },  {
+                        icon: 'truck',
+                        name: 'Heat Map Charts',
+                        link: '#/heat-map-charts'     
                     }]
             }
         ];       
