@@ -1,0 +1,142 @@
+<md-toolbar class="md-whiteframe-z1">   
+    <div class="md-toolbar-tools panel2" layout="row">
+		<div flex> 
+			<h2 class="black-clr">POLAR CHARTS</h2>
+		</div>
+		<div flex>
+			<div style="text-align: right;">
+
+		        <md-button class="md-icon-button md-primary" aria-label="Settings"  ng-click="showSource = !showSource" style="font-size: 18px; color: #000">
+			        <i class="fa fa-cogs"></i>
+			    </md-button>
+			</div>
+		</div>
+    </div>
+</md-toolbar>
+
+<md-content class="buttondemoBasicUsage md-whiteframe-z1">
+
+	<md-tabs ng-show="showSource">
+		<md-tab label="HTML">
+			<div readonly ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'html'}">
+				&#x3C;!-Polar chart--&#x3E;
+				&#x3C;div id=&#x22;polar_chart&#x22; style=&#x22;min-width: 310px; height: 400px; margin: 0 auto&#x22;&#x3E;&#x3C;/div&#x3E;
+			</div>	
+		</md-tab>
+		<md-tab label="CSS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  theme:'merbivore',
+			  mode: 'css'}">	
+
+
+    			</div>	
+		</md-tab>
+		<md-tab label="JS">
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: false,
+			  theme:'merbivore',
+			  mode: 'javascript'}">
+
+
+(function() {   
+    'use strict';   
+
+    angular.module('fm')
+        .controller('PolarChartCtrl', PolarChartCtrl);
+
+    PolarChartCtrl.$inject = ['$scope']
+
+
+    function PolarChartCtrl($scope) {
+        var vm = this;
+
+            
+
+        /*=============== Polar chart ================*/  
+
+        var PolarChart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'polar_chart',
+                    polar: true
+                },
+
+                title: {
+                    text: 'Polar Chart'
+                },
+
+                pane: {
+                    startAngle: 0,
+                    endAngle: 360
+                },
+
+                xAxis: {
+                    tickInterval: 45,
+                    min: 0,
+                    max: 360,
+                    labels: {
+                        formatter: function () {
+                            return this.value + '°';
+                        }
+                    }
+                },
+
+                yAxis: {
+                    min: 0
+                },
+
+                plotOptions: {
+                    series: {
+                        pointStart: 0,
+                        pointInterval: 45
+                    },
+                    column: {
+                        pointPadding: 0,
+                        groupPadding: 0
+                    }
+                },
+
+                series: [{
+                    type: 'column',
+                    name: 'Column',
+                    data: [8, 7, 6, 5, 4, 3, 2, 1],
+                    pointPlacement: 'between'
+                }, {
+                    type: 'line',
+                    name: 'Line',
+                    data: [1, 2, 3, 4, 5, 6, 7, 8]
+                }, {
+                    type: 'area',
+                    name: 'Area',
+                    data: [1, 8, 2, 7, 3, 6, 4, 5]
+                }]
+            });
+    
+        /*===============// Polar chart ================*/ 
+
+
+    };
+
+
+})();
+
+
+       
+ 
+    			</div>	
+		</md-tab>
+	</md-tabs>
+
+   	
+    <section layout="row" layout-sm="column" layout-wrap layout-padding style="text-align: left">
+        <div flex>
+            <div id="polar_chart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+		</div>
+		<div class="label">Polar Chart</div>
+	</section>    
+
+</md-content>

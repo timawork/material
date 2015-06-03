@@ -106,32 +106,40 @@
                 name: 'All Charts',
                 items:  [{
                         icon: 'truck',
-                        name: 'Line Charts',
-                        link: '#/line-charts'   
-                    },  {
-                        icon: 'truck',
                         name: 'Area Charts',
-                        link: '#/area-charts'
+                        link: '#/area-charts'  
                     },  {
                         icon: 'truck',
                         name: 'Column and Bar Charts',
-                        link: '#/column-bar-charts'  
-                    },  {
-                        icon: 'truck',
-                        name: 'Pie Charts',
-                        link: '#/pie-charts'   
-                    },  {
-                        icon: 'truck',
-                        name: 'Dynamic Charts',
-                        link: '#/dynamic-charts' 
+                        link: '#/column-bar-charts' 
                     },  {
                         icon: 'truck',
                         name: 'Combination Charts',
                         link: '#/combination-charts'
                     },  {
                         icon: 'truck',
+                        name: 'Dynamic Charts',
+                        link: '#/dynamic-charts'   
+                    },  {
+                        icon: 'truck',
                         name: 'Heat Map Charts',
-                        link: '#/heat-map-charts'     
+                        link: '#/heat-map-charts'                       
+                    },  {
+                        icon: 'truck',
+                        name: 'Line Charts',
+                        link: '#/line-charts'                    
+                    },  {
+                        icon: 'truck',
+                        name: 'Pie Charts',
+                        link: '#/pie-charts'   
+                    },  {
+                        icon: 'truck',
+                        name: 'Polar charts',
+                        link: '#/polar-charts'  
+                    },  {
+                        icon: 'truck',
+                        name: 'Solid Gauge',
+                        link: '#/solid-gauge-charts'     
                     }]
             }
         ];       

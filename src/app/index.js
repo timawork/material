@@ -169,7 +169,17 @@
                     url: '/heat-map-charts',
                     templateUrl: 'app/heat-map-charts/heat-map-charts.html',
                     controller: 'HeatMapCtrl',
-                    controllerAs: 'heat-map-charts'
+                    controllerAs: 'heat-map-charts' 
+                }).state('solid-gauge-charts', {
+                    url: '/solid-gauge-charts',
+                    templateUrl: 'app/solid-gauge-charts/solid-gauge-charts.html',
+                    controller: 'SolidGaugeCtrl',
+                    controllerAs: 'solid-gauge-charts' 
+                }).state('polar-charts', {
+                    url: '/polar-charts',
+                    templateUrl: 'app/polar-charts/polar-charts.html',
+                    controller: 'PolarChartCtrl',
+                    controllerAs: 'polar-charts'
                 });
 
             $urlRouterProvider.otherwise('/');
